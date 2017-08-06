@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="root">
+<head>
+    <meta charset="UTF-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="/javascript/angular/root.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+    <div ng-controller="index">{{message}}{{madison}}
+        <div>
+            Favorite word: <input type="text" ng-model="favoriteWord" />
+            - {{favoriteWord}}
+        </div>
+        <div>
+            Favorite color:
+            <input type="radio" name="fc" value="Red" ng-model="favoriteColor">Red</input>
+            <input type="radio" name="fc" value="Green" ng-model="favoriteColor">Green</input>
+            <input type="radio" name="fc" value="Yellow" ng-model="favoriteColor">Yellow</input>
+            <input type="radio" name="fc" value="Blue" ng-model="favoriteColor">Blue</input>
+            - {{favoriteColor}}
+        </div>
+        <div>
+            Favorite shape:
+            <select ng-model="favoriteShape">
+                <option value="Circle">Circle</option>
+                <option value="Triangle">Triangle</option>
+                <option value="Square">Square</option>
+            </select>
+            - {{favoriteShape}}
+        </div>
+    </div>
+
+
+</body>
+</html>
