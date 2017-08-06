@@ -1,15 +1,15 @@
-angular.module('root.createUser', ['ngRoute'])
+angular.module('root.login', ['ngRoute'])
 
 //configuration for the route
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/createUser', {
-    templateUrl: '/javascript/view1/createUser.html',
-    controller: 'createUserCtrl'
+  $routeProvider.when('/login', {
+    templateUrl: '/javascript/view1/login.html',
+    controller: 'loginCtrl'
   });
 }])
 
 
-.controller('createUserCtrl', ["$scope", "$window", function($scope, $window) {
+.controller('loginCtrl', ["$scope", "$window", function($scope, $window) {
     $scope.focused = false;
     $scope.open= false;
     $scope.signUp = function(){

@@ -1,12 +1,12 @@
 
 angular.module('root', [
   'ngRoute',
-  'root.createUser',
+  'root.login',
   'root.signIn'
 ]).
 
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/createUser'});
+  $routeProvider.otherwise({redirectTo: '/login'});
 }]);

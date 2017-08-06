@@ -1,5 +1,25 @@
-<div class="view ">
-    <div class=" full-bg-img flex-center">
+
+<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" data-interval="">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox" >
+        <!--First slide-->
+        <div class="carousel-item active mo-picture1"/>
+
+        <div class="carousel-item mo-picture2"/>
+
+        <div class="carousel-item mo-picture3"/>
+    </div>
+</div>
+
+
+<div class=" full-bg-img flex-center">
         <div ng-controller="createUserCtrl" class="col-md-3 container">
             <div id="background" class="mo-box z-depth-4"></div>
 
@@ -46,4 +66,8 @@
                 </form>
         </div>
     </div>
-</div>
+
+
+<script>$('.carousel').carousel({
+  interval: 4000
+})</script>
