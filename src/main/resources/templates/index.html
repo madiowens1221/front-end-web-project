@@ -7,49 +7,84 @@
 
     <link rel="stylesheet" href="/css/login.css"/>
     <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="stylesheet" href="/css/home.css"/>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css"/>
+
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand" rel="stylesheet"/>
 
 
 </head>
 
 <body>
 
-    <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse mo-nav z-depth-4">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Navbar</a>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+
+<!--navigation bar-->
+<nav class="navbar fixed-top  navbar-toggleable-lg navbar-inverse bg-inverse mo-nav z-depth-4" style="padding-top:0px; padding-bottom: 0px;" role="navigation">
+
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand mo-brand h1-responsive" style="padding-top:0px; padding-bottom: 0px; bottom: 0px;" href="#/home">BARKBOOK</a>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav ">
+            <li class="nav-item active">
+                <a class="nav-link  fa fa-comment fa-2x" href="#/home"><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fa fa-home fa-2x" href="#/home"></a>
+            </li>
+            <a href="#/login" class="btn blue lighten-3 mo-button-font"><i class="fa fa-plus mr-2"></i>sign in</a>
+        </ul>
+    </div>
+
+</nav>
 
 <div ng-view="" ></div>
 
+<footer class="page-footer blue center-on-small-only">
 
+    <!--Footer Links-->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6">
+                <h5 class="title">Footer Content</h5>
+                <p>Here you can use rows and columns here to organize your footer content.</p>
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col-md-6">
+                <h5 class="title">Links</h5>
+                <ul>
+                    <li><a href="#!">Link 1</a></li>
+                    <li><a href="#!">Link 2</a></li>
+                    <li><a href="#!">Link 3</a></li>
+                    <li><a href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            © 2015 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
 
 
 <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -61,8 +96,9 @@
 <script src="vendor.js/angular-route/angular-route.js"></script>
 <script src="/javascript/app.js"></script>
 <script src="/javascript/view1/login.js"></script>
-<script src="/javascript/view2/signIn.js"></script>
+<script src="/javascript/viewHome/home.js"></script>
 
 </body>
+
 
 </html>

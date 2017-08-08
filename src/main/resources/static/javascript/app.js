@@ -1,12 +1,14 @@
-
 angular.module('root', [
   'ngRoute',
   'root.login',
-  'root.signIn'
+  'root.home'
 ]).
 
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+  $locationProvider.hashPrefix('');
 
   $routeProvider.otherwise({redirectTo: '/login'});
 }]);
+
+
+

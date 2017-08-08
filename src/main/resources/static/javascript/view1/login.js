@@ -14,7 +14,7 @@ angular.module('root.login', ['ngRoute'])
     $scope.open= false;
     $scope.signUp = function(){
         if ($scope.open == true){
-            $window.location.href = "#!/signIn";
+            $window.location.href = "#/home";
          }
          $scope.open = true;
     };

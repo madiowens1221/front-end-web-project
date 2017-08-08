@@ -1,73 +1,53 @@
-
-<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" data-interval="">
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-        <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-    </ol>
-    <!--/.Indicators-->
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox" >
-        <!--First slide-->
-        <div class="carousel-item active mo-picture1"/>
-
-        <div class="carousel-item mo-picture2"/>
-
-        <div class="carousel-item mo-picture3"/>
+<div class="container-fluid HELLO">
+    <div>
+        <h2 class="text-center display-4 mb-2 mo-welcome">Sign In</h2>
     </div>
+<div class="background">
+        <div ng-controller="loginCtrl" class="col-md-3 container" >
+
+                <div class="mo-box z-depth-4"></div>
+                    <form>
+                        <div class="md-form">
+                            <i class="fa fa-envelope prefix white-text"></i>
+                            <input type="email" id="orangeForm-email" class="form-control validate" style="color:white;">
+                            <label for="orangeForm-email" class="mo-form-text" data-error="invalid" data-success="right">Your email</label>
+                        </div>
+
+                        <div class="md-form">
+                            <i class="fa fa-lock prefix white-text"></i>
+                            <!--not validated-->
+                            <input type="password" id="password" class="form-control" ng-focus="focused = true" ng-blur="focused = false" ng-class="{valid: isValid()}">
+                            <label for="password" class="mo-form-text" data-error="wrong" data-success="ur password sux">Your password</label>
+                        </div>
+
+                     <div class="collapse" id="collapseSignup">
+                        <div class="md-form">
+                            <i class="fa fa-check prefix white-text"></i>
+                            <input type="password" id="valid-pass" class="form-control validate" match="#password" data-match-error="hello">
+                            <label for="valid-pass" class="mo-form-text" data-error="wrong" data-success="right">Verify password</label>
+                        </div>
+
+                        <div class="md-form">
+                            <i class="fa fa-user prefix white-text"></i>
+                            <input type="text" id="orangeForm-name" class="form-control">
+                            <label for="orangeForm-name" class="mo-form-text">Your name</label>
+                        </div>
+
+                         <div class="md-form">
+                             <i class="fa fa-paw prefix white-text"></i>
+                             <input type="text" id="orangeForm-name" class="form-control">
+                             <label for="orangeForm-name" class="mo-form-text">Your pets name</label>
+                         </div>
+
+                     </div>
+                        <div class="text-center">
+                            <button type="button" class="btn lime waves-effect waves-light">Log In</button>
+                            <button ng-click="signUp()" type="button" class="btn lime waves-effect waves-light" data-toggle="collapse" data-target="#collapseSignup" aria-expanded="false" aria-controls="collapseSignup">Sign Up</button>
+                        </div>
+                    </form>
+            </div>
+    </div>
+
 </div>
 
 
-<div class=" full-bg-img flex-center">
-        <div ng-controller="createUserCtrl" class="col-md-3 container">
-            <div id="background" class="mo-box z-depth-4"></div>
-
-                <form class="collapsible-body">
-                    <h2 class="text-center mb-5 mo-welcome">welcome</h2>
-
-                    <div class="md-form">
-                        <i class="fa fa-envelope prefix white-text"></i>
-                        <input type="email" id="orangeForm-email" class="form-control">
-                        <label for="orangeForm-email" class="mo-form-text" data-error="invalid" data-success="right"">Your email</label>
-                    </div>
-
-                    <div class="md-form">
-                        <i class="fa fa-lock prefix white-text"></i>
-                        <input type="password" id="password" class="form-control" ng-focus="focused = true" ng-blur="focused = false" ng-class="{valid: isValid()}">
-                        <label for="password" class="mo-form-text" data-error="wrong" data-success="ur password sux">Your password</label>
-                    </div>
-
-                 <div class="collapse" id="collapseExample">
-                    <div class="md-form">
-                        <i class="fa fa-check prefix white-text"></i>
-                        <input type="password" id="valid-pass" class="form-control validate" match="#password" data-match-error="hello">
-                        <label for="valid-pass" class="mo-form-text" data-error="wrong" data-success="right">Verify password</label>
-                    </div>
-
-                    <div class="md-form">
-                        <i class="fa fa-user prefix white-text"></i>
-                        <input type="text" id="orangeForm-name" class="form-control">
-                        <label for="orangeForm-name" class="mo-form-text">Your name</label>
-                    </div>
-
-                     <div class="md-form">
-                         <i class="fa fa-paw prefix white-text"></i>
-                         <input type="text" id="orangeForm-name" class="form-control">
-                         <label for="orangeForm-name" class="mo-form-text">Your pets name</label>
-                     </div>
-
-                 </div>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-pink waves-effect waves-light">Log In</button>
-                        <button ng-click="signUp()" type="button" class="btn btn-pink waves-effect waves-light" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Sign Up</button>
-                    </div>
-
-                </form>
-        </div>
-    </div>
-
-
-<script>$('.carousel').carousel({
-  interval: 4000
-})</script>

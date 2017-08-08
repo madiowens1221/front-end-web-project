@@ -2,3 +2,13 @@
   z-index: 1;
   position: relative;
 }
+
+.mo-brand {
+font-family: 'Chewy', cursive;
+}
+
+.mo-button-font {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px !important;
+}
+
