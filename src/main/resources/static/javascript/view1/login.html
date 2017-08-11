@@ -1,53 +1,83 @@
-<div class="container-fluid HELLO">
-    <div>
-        <h2 class="text-center display-4 mb-2 mo-welcome">Sign In</h2>
-    </div>
-<div class="background">
-        <div ng-controller="loginCtrl" class="col-md-3 container" >
+<div class="row">
+    <div class="col-sm-12">
+        <div class="container-fluid">
 
-                <div class="mo-box z-depth-4"></div>
-                    <form>
-                        <div class="md-form">
-                            <i class="fa fa-envelope prefix white-text"></i>
-                            <input type="email" id="orangeForm-email" class="form-control validate" style="color:white;">
-                            <label for="orangeForm-email" class="mo-form-text" data-error="invalid" data-success="right">Your email</label>
-                        </div>
+            <!--sign in-->
+            <div class="mb-3"/>
+                <div class="row">
+                    <div class="col display-4 mb-2 mo-welcome">Paws In</div>
+                </div>
 
-                        <div class="md-form">
-                            <i class="fa fa-lock prefix white-text"></i>
-                            <!--not validated-->
-                            <input type="password" id="password" class="form-control" ng-focus="focused = true" ng-blur="focused = false" ng-class="{valid: isValid()}">
-                            <label for="password" class="mo-form-text" data-error="wrong" data-success="ur password sux">Your password</label>
-                        </div>
+            <div class="row mo-signin-bg">
+                <div class="col">
 
-                     <div class="collapse" id="collapseSignup">
-                        <div class="md-form">
-                            <i class="fa fa-check prefix white-text"></i>
-                            <input type="password" id="valid-pass" class="form-control validate" match="#password" data-match-error="hello">
-                            <label for="valid-pass" class="mo-form-text" data-error="wrong" data-success="right">Verify password</label>
-                        </div>
+                    <div ng-controller="loginCtrl" class="col-sm-3 mx-auto" >
+                        <div class="mo-boxy z-depth-4"></div>
 
-                        <div class="md-form">
-                            <i class="fa fa-user prefix white-text"></i>
-                            <input type="text" id="orangeForm-name" class="form-control">
-                            <label for="orangeForm-name" class="mo-form-text">Your name</label>
-                        </div>
 
-                         <div class="md-form">
-                             <i class="fa fa-paw prefix white-text"></i>
-                             <input type="text" id="orangeForm-name" class="form-control">
-                             <label for="orangeForm-name" class="mo-form-text">Your pets name</label>
-                         </div>
+                        <hr class="style14">
 
-                     </div>
                         <div class="text-center">
-                            <button type="button" class="btn lime waves-effect waves-light">Log In</button>
-                            <button ng-click="signUp()" type="button" class="btn lime waves-effect waves-light" data-toggle="collapse" data-target="#collapseSignup" aria-expanded="false" aria-controls="collapseSignup">Sign Up</button>
+                            <a href="" class="btn deep-orange darken-3  waves-effect waves-light"><i class="fa fa-google-plus left"></i> Google +</a>
+                            <a href="" class="btn  light-blue darken-3  waves-effect waves-light"><i class="fa fa-facebook left"></i> Facebook</a>
                         </div>
-                    </form>
+
+                        <hr class="style14">
+
+                        <form>
+                            <!--email-->
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix black-text"></i>
+                                <input type="email" id="your-email" class="form-control validate">
+                                <label for="your-email" data-error="invalid" data-success="good" class="mo-form-fonts">Your email</label>
+                            </div>
+                            <!--password-->
+                            <div class="md-form">
+                                <i class="fa fa-lock prefix black-text"></i>
+                                <!--not validated-->
+                                <input type="password" id="password" class="form-control" ng-focus="focused = true" ng-blur="focused = false" ng-class="{valid: isValid()}">
+                                <label for="password" data-error="invalid" data-success="good" class="mo-form-fonts">Your password</label>
+                            </div>
+
+                            <!--collapse form-->
+                                <div class="collapse" id="collapseSignup">
+                                    <!--validate password-->
+                                    <div class="md-form">
+                                        <i class="fa fa-check prefix black-text"></i>
+                                        <input type="password" id="valid-pass" class="form-control validate" match="#password" data-match-error="hello">
+                                        <label for="valid-pass" data-error="wrong" data-success="right" class="mo-form-fonts">Verify password</label>
+                                    </div>
+                                    <!--name-->
+                                    <div class="md-form">
+                                        <i class="fa fa-user prefix black-text"></i>
+                                        <input type="text" id="your-name" class="form-control">
+                                        <label for="your-name" class="mo-form-fonts">Your name</label>
+                                    </div>
+                                    <!--dog name-->
+                                    <div class="md-form">
+                                        <i class="fa fa-paw prefix black-text"></i>
+                                        <input type="text" id="pets-name" class="form-control">
+                                        <label for="pets-name" class="mo-form-fonts">Your pets name</label>
+                                    </div>
+                                </div>
+                            <!--end collapse form-->
+
+                            <div class="text-center mb-1">
+                                <button type="button" class="btn btn-block lime waves-effect waves-light">Log In</button>
+                            </div>
+
+                            <hr class="style14">
+                            <div class="text-center">
+                                <a href="" ng-click="signUp()" data-toggle="collapse" data-target="#collapseSignup" aria-expanded="false" aria-controls="collapseSignup">new?</a>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
             </div>
+
+
+        </div>
     </div>
-
 </div>
-
-

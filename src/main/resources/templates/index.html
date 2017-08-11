@@ -5,84 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>my app</title>
 
-    <link rel="stylesheet" href="/css/login.css"/>
-    <link rel="stylesheet" href="/css/index.css"/>
-    <link rel="stylesheet" href="/css/home.css"/>
+
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css"/>
-
+    <link rel="stylesheet" href="/css/login.css"/>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="stylesheet" href="/css/home.css"/>
     <!--fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand|Josefin+Sans|Raleway:100" rel="stylesheet"/>
 
 
 </head>
 
 <body>
 
+<div class="container-fluid wrapper">
+    <div class="row">
+        <div class="col">
 
-<!--navigation bar-->
-<nav class="navbar fixed-top  navbar-toggleable-lg navbar-inverse bg-inverse mo-nav z-depth-4" style="padding-top:0px; padding-bottom: 0px;" role="navigation">
+            <!--navigation bar-->
+            <nav class="navbar navbar-toggleable-lg navbar-inverse bg-inverse z-depth-4" style="padding-top:0px; padding-bottom: 0px;" role="navigation">
 
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <a class="navbar-brand mo-brand h1-responsive" style="padding-top:0px; padding-bottom: 0px; bottom: 0px;" href="#/home">BARKBOOK</a>
+                <a class="navbar-brand mo-brand h1-responsive" href="#/home">BARKBOOK</a>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-        <ul class="navbar-nav ">
-            <li class="nav-item active">
-                <a class="nav-link  fa fa-comment fa-2x" href="#/home"><span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link  fa fa-home fa-2x" href="#/home"></a>
-            </li>
-            <a href="#/login" class="btn blue lighten-3 mo-button-font"><i class="fa fa-plus mr-2"></i>sign in</a>
-        </ul>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item active">
+                            <a class="nav-link  fa fa-comment fa-2x" href="#/home"><span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link  fa fa-home fa-2x" href="#/home"></a>
+                        </li>
+                        <a href="#/login" class="btn btn-sm cyan lighten-2 mo-button-font"><i class="fa fa-plus mr-2"></i>paws in</a>
+                    </ul>
+                </div>
+
+            </nav>
+            <!--end navigation bar-->
+
+        </div>
     </div>
 
-</nav>
+    <div ng-view="" ></div>
 
-<div ng-view="" ></div>
+</div>
 
-<footer class="page-footer blue center-on-small-only">
+<div class="push"></div>
+<footer class="page-footer center-on-small-only" style="padding-top: 0px;">
 
     <!--Footer Links-->
     <div class="container-fluid">
         <div class="row">
-
-            <!--First column-->
-            <div class="col-md-6">
-                <h5 class="title">Footer Content</h5>
-                <p>Here you can use rows and columns here to organize your footer content.</p>
+            <div class="col-md-12 mo-footer-brand">
+                <a class="navbar-brand mo-brand h1-responsive" href="#/home">BARKBOOK</a>
             </div>
-            <!--/.First column-->
-
-            <!--Second column-->
-            <div class="col-md-6">
-                <h5 class="title">Links</h5>
-                <ul>
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                    <li><a href="#!">Link 3</a></li>
-                    <li><a href="#!">Link 4</a></li>
-                </ul>
-            </div>
-            <!--/.Second column-->
         </div>
+
+        <div class="row">
+            <div class="col-md-12 mo-footer-mid">
+                <a href="" class="btn mdb-color lighten-2 waves-effect waves-light"><i class="fa fa-plus mr-2"></i>your dog</a> or <a href="" class="btn mdb-color lighten-2 waves-effect waves-light"><i class="fa fa-lock mr-2"></i>sign in</a>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <!--First column-->
+            <div class="col-md-12 mo-footer-links">
+                <a href="" class="mo-footer-btn"><i class="fa fa-home"></i> home</a>
+                <a href="" class="mo-footer-btn"><i class="fa fa-question"></i> faq</a>
+                <a href="" class="mo-footer-btn"><i class="fa fa-user"></i> about</a>
+                <a href="" class="mo-footer-btn"><i class="fa fa-envelope"></i> curators</a>
+                <a href="" class="mo-footer-btn"><i class="fa fa-comments"></i> chat</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mo-footer-bottom">
+            </div>
+        </div>
+        <!--/.First column-->
+        <!--Second column-->
+
+        <!--/.Second column-->
     </div>
     <!--/.Footer Links-->
-
-    <!--Copyright-->
-    <div class="footer-copyright">
-        <div class="container-fluid">
-            © 2015 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
-
-        </div>
-    </div>
-    <!--/.Copyright-->
 
 </footer>
 
@@ -91,7 +102,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/js/mdb.min.js"></script>
-    <!--referring to static folder "/"-->
+<!--referring to static folder "/"-->
 <script src="vendor.js/angular/angular.js"></script>
 <script src="vendor.js/angular-route/angular-route.js"></script>
 <script src="/javascript/app.js"></script>
