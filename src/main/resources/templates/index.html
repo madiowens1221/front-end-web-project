@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css"/>
     <link rel="stylesheet" href="/css/login.css"/>
     <link rel="stylesheet" href="/css/index.css"/>
-    <link rel="stylesheet" href="/css/home.css"/>
+    <link rel="stylesheet" href="/css/about.css"/>
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand|Josefin+Sans|Raleway:100" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
 
 
 </head>
@@ -22,7 +23,7 @@
 <body>
 
 <div class="container-fluid wrapper">
-    <div class="row">
+    <div class="row" ng-controller="indexCtrl">
         <div class="col">
 
             <!--navigation bar-->
@@ -36,13 +37,32 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav ">
-                        <li class="nav-item active">
-                            <a class="nav-link  fa fa-comment fa-2x" href="#/home"><span class="sr-only">(current)</span></a>
+                        <!--home-->
+                        <li class="nav-item">
+                            <a class="nav-link fa fa-home fa-2x" href="#/dashboard"><span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link  fa fa-home fa-2x" href="#/home"></a>
+                        <!--account-->
+                        <li class="nav-item">
+                            <a class="nav-link  fa fa-user fa-2x" href="#/account"></a>
                         </li>
-                        <a href="#/login" class="btn btn-sm cyan lighten-2 mo-button-font"><i class="fa fa-plus mr-2"></i>paws in</a>
+                        <!--chat-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fa fa-comments fa-2x" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink2">
+                                <div> HELLO </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fa fa-info fa-2x" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="text-center">more info</div>
+                                <a class="dropdown-item" href="#/about">about</a>
+                                <a class="dropdown-item" href="#/faq">faq</a>
+                            </div>
+                        </li>
+
+                        <a class="btn btn-sm cyan lighten-2 mo-button-font" ng-click="logInOrOut()"><i class="fa fa-plus mr-2"></i>{{buttonText}}</a>
                     </ul>
                 </div>
 
@@ -69,33 +89,48 @@
 
         <div class="row">
             <div class="col-md-12 mo-footer-mid">
-                <a href="" class="btn mdb-color lighten-2 waves-effect waves-light"><i class="fa fa-plus mr-2"></i>your dog</a> or <a href="" class="btn mdb-color lighten-2 waves-effect waves-light"><i class="fa fa-lock mr-2"></i>sign in</a>
+                <a href="" class="btn mdb-color lighten-2 waves-effect waves-light" ><i class="fa fa-plus mr-2"></i>your dog</a> or <a href="" class="btn mdb-color lighten-2 waves-effect waves-light"><i class="fa fa-lock mr-2"></i>sign in</a>
             </div>
         </div>
 
         <div class="row align-items-center">
             <!--First column-->
             <div class="col-md-12 mo-footer-links">
-                <a href="" class="mo-footer-btn"><i class="fa fa-home"></i> home</a>
-                <a href="" class="mo-footer-btn"><i class="fa fa-question"></i> faq</a>
-                <a href="" class="mo-footer-btn"><i class="fa fa-user"></i> about</a>
-                <a href="" class="mo-footer-btn"><i class="fa fa-envelope"></i> curators</a>
-                <a href="" class="mo-footer-btn"><i class="fa fa-comments"></i> chat</a>
+                <a href="#/home" class="mo-footer-link" title="home"><i class="fa fa-home"></i> home</a>
+                <a href="#/faq" class="mo-footer-link"><i class="fa fa-question"></i> faq</a>
+                <a href="#/about" class="mo-footer-link"><i class="fa fa-user"></i> about</a>
+                <a href="#/" class="mo-footer-link"><i class="fa fa-envelope"></i> curators</a>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-12 mo-footer-bottom">
+                <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
             </div>
         </div>
         <!--/.First column-->
-        <!--Second column-->
-
-        <!--/.Second column-->
     </div>
     <!--/.Footer Links-->
 
+
 </footer>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCsKuoJyziGg0atjulh8wTqKkDJcEC86BA",
+    authDomain: "capstone-project-cb69b.firebaseapp.com",
+    databaseURL: "https://capstone-project-cb69b.firebaseio.com",
+    projectId: "capstone-project-cb69b",
+    storageBucket: "",
+    messagingSenderId: "357435805108"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
 
 
 <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -105,9 +140,14 @@
 <!--referring to static folder "/"-->
 <script src="vendor.js/angular/angular.js"></script>
 <script src="vendor.js/angular-route/angular-route.js"></script>
+
 <script src="/javascript/app.js"></script>
-<script src="/javascript/view1/login.js"></script>
-<script src="/javascript/viewHome/home.js"></script>
+<!--views-->
+<script src="/javascript/viewLogin/login.js"></script>
+<script src="/javascript/viewAbout/about.js"></script>
+<script src="/javascript/viewDashboard/dashboard.js"></script>
+<script src="/javascript/viewAccount/account.js"></script>
+
 
 </body>
 
