@@ -1,0 +1,42 @@
+.MO-home-slide1 {
+  background: url("http://i.imgur.com/PpZ6w3l.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.MO-home {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+
+.MO-btn-fork {
+  display: inline-block;
+  list-style: none;
+}
+
+.MO-home-btn {
+  border-radius: 1000px;
+  width: 200.16px;
+  background-color: white;
+  background: rgba(255,255,255,0.7);
+  color: rgba(0, 0, 0,0.7) !important;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.MO-home-tiny {
+  color: white;
+  font-weight: bold;
+}
+
+.MO-home-slide2 {
+  background: url("http://i.imgur.com/yoDNSke.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.MO-home-slide3 {
+  background: url("https://images.pexels.com/photos/283012/pexels-photo-283012.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
+  background-size: cover;
+  height: 100vh;
+}

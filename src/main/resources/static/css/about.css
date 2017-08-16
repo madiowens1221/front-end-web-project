@@ -26,7 +26,7 @@
 }
 
 .container section:nth-child(1) .image {
-  background-image: url(https://images.pexels.com/photos/134392/pexels-photo-134392.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
+  background-image: url(https://images.pexels.com/photos/128817/pexels-photo-128817.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
 }
 .container section:nth-child(2) .image {
   background-image: url(https://images.pexels.com/photos/169524/pexels-photo-169524.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
@@ -64,6 +64,15 @@
   padding-bottom: 20px;
   font-family: 'Quicksand', sans-serif;
 }
+
+.MO-about-1 {
+  font-size: 5vw;
+}
+
+.MO-about-2 {
+  font-size: 2vw;
+}
+
 
 .mo-parallax {
     font-family: 'Raleway', sans-serif;

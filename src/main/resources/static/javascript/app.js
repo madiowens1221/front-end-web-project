@@ -3,7 +3,8 @@ angular.module('root', [
   'root.login',
   'root.about',
   'root.account',
-  'root.dashboard'
+  'root.dashboard',
+  'root.home'
 ]).
 
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
