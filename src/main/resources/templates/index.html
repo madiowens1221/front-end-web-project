@@ -14,26 +14,25 @@
     <link rel="stylesheet" href="/css/index.css"/>
     <link rel="stylesheet" href="/css/about.css"/>
     <!--fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand|Josefin+Sans|Raleway:100" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand|Josefin+Sans|Raleway:100|Sigmar+One" rel="stylesheet"/>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
 
 
 </head>
 
 <body>
-
-<div class="container-fluid wrapper">
-    <div class="row" ng-controller="indexCtrl">
-        <div class="col">
+<div class="container-fluid wrapper mo-body">
+    <div class="row mo-nav-row" ng-controller="indexCtrl">
+        <div class="col mo-nav-col">
 
             <!--navigation bar-->
-            <nav class="navbar navbar-toggleable-lg navbar-inverse bg-inverse z-depth-4" style="padding-top:0px; padding-bottom: 0px;" role="navigation">
+            <nav class="navbar navbar-toggleable-lg navbar-inverse bg-inverse z-depth-4 mo-nav-padding"  role="navigation">
 
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a class="navbar-brand mo-brand h1-responsive" href="#/home">BARKBOOK</a>
+                <a class="navbar-brand mo-brand" href="#/home">BARKBOOK</a>
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav ">
@@ -89,32 +88,65 @@
 
         <div class="row">
             <div class="col-md-12 mo-footer-mid">
-                <a href="" class="btn mdb-color lighten-2 waves-effect waves-light" ><i class="fa fa-plus mr-2"></i>your dog</a> or <a href="" class="btn mdb-color lighten-2 waves-effect waves-light"><i class="fa fa-lock mr-2"></i>sign in</a>
+                <a href="#/about" class="btn black mo-f-btn"><i class="fa fa-info mr-2"></i>learn more</a>
+                <span class="mo-or">or</span>
+                <a href="#/login" class="btn black mo-f-btn"><i class="fa fa-plus mr-2"></i>sign up</a>
             </div>
         </div>
 
         <div class="row align-items-center">
             <!--First column-->
             <div class="col-md-12 mo-footer-links">
-                <a href="#/home" class="mo-footer-link" title="home"><i class="fa fa-home"></i> home</a>
-                <a href="#/faq" class="mo-footer-link"><i class="fa fa-question"></i> faq</a>
-                <a href="#/about" class="mo-footer-link"><i class="fa fa-user"></i> about</a>
-                <a href="#/" class="mo-footer-link"><i class="fa fa-envelope"></i> curators</a>
+                <ul class="mo-footer-ul">
+                    <li>
+                        <a href="#/home">
+                        <div class="mo-icon">
+                                <span class="mo-icon fa fa-home"/>
+                                <span class="mo-link"> home</span>
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/account">
+                            <div class="mo-icon">
+                                <span class="mo-icon fa fa-user"/>
+                                <span class="mo-link"> account</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/faq">
+                            <div class="mo-icon">
+                                <span class="mo-icon fa fa-question"/>
+                                <span class="mo-link"> faq</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/links">
+                            <div class="mo-icon">
+                                <span class="mo-icon fa fa-external-link"/>
+                                <span class="mo-link"> more links</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-12 mo-footer-bottom">
+                <p class="mo-fineprint">
+                    <i class="fa fa-copyright"></i>
+                    2017 Madison Owens
+                </p>
                 <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
             </div>
         </div>
-        <!--/.First column-->
     </div>
-    <!--/.Footer Links-->
 
 
 </footer>
-
 
 <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 <script>

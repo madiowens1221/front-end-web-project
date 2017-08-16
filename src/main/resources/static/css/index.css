@@ -1,5 +1,30 @@
+.mo-body {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.mo-nav-row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.mo-nav-col {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.mo-nav-padding {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 .mo-brand {
-font-family: 'Chewy', cursive;
+  font-family: 'Sigmar One', cursive;
+  font-size: 5vh;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .mo-button-font {
@@ -33,6 +58,21 @@ font-family: 'Chewy', cursive;
   padding-top: 5px;
 }
 
+.mo-f-btn {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px !important;
+  padding: 15px;
+}
+
+.mo-f-btn:hover {
+  background-color: #00acc1 !important;
+}
+
+.mo-or {
+  font-size: 12px;
+}
+
+/* 3rd section of footer */
 .mo-footer-bottom {
   padding-top: 30px;
   background-color: #212121;
@@ -40,12 +80,28 @@ font-family: 'Chewy', cursive;
   height: 100px;
 }
 
-.mo-footer-link {
-  background-color: #212121;
-  margin-right: 1.5%
+.mo-footer-ul li{
+  list-style: none;
+  display: inline-block;
+  padding-right: 1.5%;
 }
-.mo-footer-link:hover {
+
+
+.mo-icon {
+  color: grey;
+}
+
+.mo-icon:hover > .mo-icon {
+  color: white;
+}
+.mo-icon:hover > .mo-link {
   color: hotpink;
+}
+
+.mo-fineprint {
+  text-align: center;
+  color: grey;
+  font-size: 13px;
 }
 
 /* MADE THE FOOTER WORK ORIGINALLY

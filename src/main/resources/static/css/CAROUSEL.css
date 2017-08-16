@@ -21,3 +21,35 @@
 $('.carousel').carousel({
 interval: 3000
 })</script>
+
+
+.mo-picture1 {
+      background: url("https://images.pexels.com/photos/171297/pexels-photo-171297.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")center fixed;
+      background-size: cover;
+      height: 100vh;
+}
+
+.mo-picture2 {
+    background: url("https://images.pexels.com/photos/5286/walking-garden-dog-outside.jpg?w=1260&h=750&auto=compress&cs=tinysrgbgithub")center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.mo-picture3 {
+    background: url("https://images.pexels.com/photos/313104/pexels-photo-313104.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.mo-signin-bg {
+  background-color: #f3f2ed;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+  margin:0%;
+}

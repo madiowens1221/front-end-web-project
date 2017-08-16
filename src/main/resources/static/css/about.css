@@ -1,3 +1,8 @@
+.mo-parallax-div {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 .container {
   display: flex;
   align-content: center;
@@ -10,7 +15,7 @@
   width: 100%;
 }
 .container section {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   flex: 1;
   display: flex;
@@ -73,4 +78,9 @@
 
 .mo-btn-color {
   background-color: #356b99;
+}
+
+.mo-little-cards {
+  margin-left: 0px;
+  margin-right: 0px;
 }
