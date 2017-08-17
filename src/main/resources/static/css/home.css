@@ -1,6 +1,6 @@
 .MO-home {
   font-family: 'Raleway', sans-serif;
-  color: white;
+  color: red;
 }
 
 .MO-btn-fork {
@@ -23,19 +23,19 @@
   font-weight: bold;
 }
 
-.MO-home-slide1 {
+.MOhomeslide1 {
   background: url("http://i.imgur.com/PpZ6w3l.jpg");
   background-size: cover;
   height: 100vh;
 }
 
-.MO-home-slide2 {
+.MOhomeslide2 {
   background: url("http://i.imgur.com/yoDNSke.jpg");
   background-size: cover;
   height: 100vh;
 }
 
-.MO-home-slide3 {
+.MOhomeslide3 {
   background: url("https://images.pexels.com/photos/156961/pexels-photo-156961.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
   background-size: cover;
   height: 100vh;
@@ -60,4 +60,26 @@
     background: url("https://images.pexels.com/photos/156961/pexels-photo-156961.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")center fixed;
     background-size: cover;
     height: 100vh;
+}
+
+.MO-home-center-text {
+    position: absolute;
+    z-index: 99;
+}
+
+.fadeIn {
+  -webkit-animation-duration:1.5s;
+  -webkit-animation-delay: 0s;
+}
+
+.fadeOut{
+    -webkit-animation-duration:1.5s;
+}
+
+
+
+
+.WILSON {
+    position: absolute;
+    z-index: 1;
 }
