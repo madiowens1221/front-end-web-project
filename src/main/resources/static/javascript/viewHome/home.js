@@ -8,5 +8,5 @@ angular.module('root.home', ['ngRoute'])
 }])
 
 .controller('homeCtrl', ["$scope", function($scope) {
-  $scope.NoDog
+
 }]);

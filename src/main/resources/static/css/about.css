@@ -62,11 +62,16 @@
 .about-mission {
   padding-top: 20px;
   padding-bottom: 20px;
-  font-family: 'Quicksand', sans-serif;
+
+}
+
+.MO-about-bold {
+  font-weight: bold;
+  font-size: 6vw;
 }
 
 .MO-about-1 {
-  font-size: 5vw;
+  font-size: 6vw;
 }
 
 .MO-about-2 {

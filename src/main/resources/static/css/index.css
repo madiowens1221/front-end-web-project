@@ -163,3 +163,7 @@ html, body {
     color: #fff;
     top: 5px;
 }
+
+.MO-page-footer {
+  margin-top: 0px !important;
+}

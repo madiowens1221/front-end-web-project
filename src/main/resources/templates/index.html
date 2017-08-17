@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="/css/index.css"/>
     <link rel="stylesheet" href="/css/about.css"/>
     <link rel="stylesheet" href="/css/home.css"/>
+    <link rel="stylesheet" href="/css/questions.css"/>
     <!--fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand|Josefin+Sans|Raleway:100|Sigmar+One" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand|Josefin+Sans|Raleway:200|Sigmar+One" rel="stylesheet"/>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
 
 
@@ -27,7 +28,7 @@
         <div class="col mo-nav-col">
 
             <!--navigation bar-->
-            <nav class="navbar navbar-toggleable-lg navbar-inverse bg-inverse z-depth-4 mo-nav-padding"  role="navigation">
+            <nav class="navbar navbar-toggleable-lg navbar-inverse bg-inverse z-depth-2 mo-nav-padding"  role="navigation">
 
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -58,7 +59,7 @@
                             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                                 <div class="text-center">more info</div>
                                 <a class="dropdown-item" href="#/about">about</a>
-                                <a class="dropdown-item" href="#/faq">faq</a>
+                                <a class="dropdown-item" href="#/questions">faq</a>
                             </div>
                         </li>
 
@@ -74,10 +75,10 @@
 
 </div>
 
-<div ng-view="" ></div>
+<div ng-view="" autoscroll="true" ></div>
 
 <div class="push"></div>
-<footer class="page-footer center-on-small-only" style="padding-top: 0px;">
+<footer class="page-footer center-on-small-only MO-page-footer" style="padding-top: 0px;">
 
     <!--Footer Links-->
     <div class="container-fluid">
@@ -116,7 +117,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#/faq">
+                        <a href="#/questions">
                             <div class="mo-icon">
                                 <span class="mo-icon fa fa-question"/>
                                 <span class="mo-link"> faq</span>
@@ -181,6 +182,7 @@
 <script src="/javascript/viewDashboard/dashboard.js"></script>
 <script src="/javascript/viewAccount/account.js"></script>
 <script src="/javascript/viewHome/home.js"></script>
+<script src="/javascript/viewFAQ/questions.js"></script>
 
 </body>
 
