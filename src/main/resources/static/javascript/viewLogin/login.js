@@ -9,14 +9,18 @@ angular.module('root.login', ['ngRoute'])
 }])
 
 
-.controller('loginCtrl', ["$scope", "$window", function($scope, $window) {
+.controller('loginCtrl', ["$scope", "$window", "$rootScope", function($scope, $window, $rootScope) {
+    //
+    $rootScope.isHomeView = false;
+
+    //verify password
     $scope.focused = false;
     $scope.open= false;
     $scope.isValid = function(){
             return $scope.focused;
         };
 
-    //changes text on button
+    //changes text on login button
     $scope.signUp = function(){
         if ($scope.buttonText === "sign in") {
             $scope.buttonText = "create account";}

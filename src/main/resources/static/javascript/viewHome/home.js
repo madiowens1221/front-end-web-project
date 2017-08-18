@@ -7,18 +7,7 @@ angular.module('root.home', ['ngRoute'])
   });
 }])
 
-.controller('homeCtrl', ["$scope", "$timeout", function($scope, $timeout) {
-    $scope.isSlide1 = true;
-    $scope.isSlide2 = true;
-    $scope.isSlide3 = true;
-    $scope.fadeOut = false;
-    $scope.fadeIn = false;
 
-    $scope.yesSelected = function () {
-        $scope.fadeOut = true;
-        //$scope.isSlide2 = true;
-        $scope.isSlide2=true;
-        $scope.isSlide1=false;
-
-    };
+.controller('homeCtrl', ["$scope", "$rootScope", function($scope, $rootScope) {
+    $rootScope.isHomeView = true;
 }]);

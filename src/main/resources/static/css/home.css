@@ -1,11 +1,12 @@
+/* home page font*/
 .MO-home {
   font-family: 'Raleway', sans-serif;
-  color: red;
-}
-
-.MO-btn-fork {
-  display: inline-block;
-  list-style: none;
+  color: white;
+  position: absolute;
+  top: 35%;
+  left: 1.8%;
+  right: auto;
+  width: 96.66666666666666%;
 }
 
 .MO-home-btn {
@@ -22,26 +23,6 @@
   color: white;
   font-weight: bold;
 }
-
-.MOhomeslide1 {
-  background: url("http://i.imgur.com/PpZ6w3l.jpg");
-  background-size: cover;
-  height: 100vh;
-}
-
-.MOhomeslide2 {
-  background: url("http://i.imgur.com/yoDNSke.jpg");
-  background-size: cover;
-  height: 100vh;
-}
-
-.MOhomeslide3 {
-  background: url("https://images.pexels.com/photos/156961/pexels-photo-156961.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
-  background-size: cover;
-  height: 100vh;
-  padding-bottom: 100px;
-}
-
 
 
 .mo-picture1 {
@@ -67,19 +48,3 @@
     z-index: 99;
 }
 
-.fadeIn {
-  -webkit-animation-duration:1.5s;
-  -webkit-animation-delay: 0s;
-}
-
-.fadeOut{
-    -webkit-animation-duration:1.5s;
-}
-
-
-
-
-.WILSON {
-    position: absolute;
-    z-index: 1;
-}

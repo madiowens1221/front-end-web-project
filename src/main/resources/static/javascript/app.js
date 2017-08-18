@@ -15,14 +15,6 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 }]).
 
 controller( 'indexCtrl', ['$scope', '$window', function($scope, $window) {
-    $scope.isHomeView = false;
-
-    if ($window.location.hash === '#/home') {
-        $scope.isHomeView = true;
-    }
-    else {
-        $scope.isHomeView = false;
-    }
 
 
     $scope.buttonText = "loading!";
