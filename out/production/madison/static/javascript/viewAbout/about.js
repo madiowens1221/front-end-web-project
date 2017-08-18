@@ -7,8 +7,6 @@ angular.module('root.about', ['ngRoute'])
   });
 }])
 
-
-.controller('aboutCtrl', ["$scope", "$rootScope", function($scope, $rootScope) {
-    $rootScope.isHomeView = false;
+.controller('aboutCtrl', [function() {
 
 }]);

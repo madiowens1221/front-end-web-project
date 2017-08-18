@@ -1,0 +1,38 @@
+.MO-FAQ {
+  color: dark-grey;
+  background: white;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  }
+
+.MO-FAQ-bg {
+  background-color: #f3f2ed;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.MO-FAQ-links {
+  color: #6c6c6c;
+  text-decoration: none;
+}
+
+.MO-FAQ-links:hover {
+  color: hotpink;
+  -webkit-transition: color .5s ease-out;
+}
+
+.MO-open {
+      padding: 1em .5em;
+      list-style: none;
+      border-bottom: 1px solid #CDCDCD;
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      border-top: 1px solid #FFF;
+      border-top: 1px solid rgba(255,255,255,0.75);
+}
+
+.MO-open:hover {
+  background-color: white;
+}
+
+

@@ -1,118 +1,100 @@
 
 
-<!--JEREMy-->
-<!--<div class="container animated "  ng-class="{MOhomeslide1:isSlide1, fadeOut:fadeOut, fadeIn:fadeIn}">-->
+<div id="carousel" class="carousel  carousel-fade" data-ride="carousel">
 
-<!--</div>-->
-
-<!--<div class="MO-home-center-text">-->
-    <!--<h1 class="MO-home" style="font-size: 5vw;">Do you have a dog?</h1>-->
-    <!--<div class="MO-btn-fork">-->
-        <!--<button class="btn MO-home-btn" >No</button>-->
-        <!--<button class="btn MO-home-btn" ng-click="yesSelected()">Yes</button>-->
-    <!--</div>-->
-<!--</div>-->
-
-<!--<div class="container MO-home-slide2">-->
-    <!--<div class="text-center animated slideInLeft">-->
-        <!--<h5 class="MO-home-tiny">No dogs?</h5>-->
-        <!--<h1 class="MO-home" style="font-size: 5vw;">But you love dogs right?</h1>-->
-        <!--<div class="MO-btn-fork">-->
-            <!--<a href="https://www.reddit.com/r/dogs/" class="btn MO-home-btn" >No</a>-->
-            <!--&lt;!&ndash;take elsewhere&ndash;&gt;-->
-            <!--<a class="btn MO-home-btn" >Yes</a>-->
-            <!--&lt;!&ndash;take to login&ndash;&gt;-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-
-<!--<div class="container MO-home-slide3">-->
-    <!--<div class="text-center animated slideInRight">-->
-        <!--<h5 class="MO-home-tiny">I figured.</h5>-->
-        <!--<h1 class="MO-home" style="font-size: 5vw;">Barkbook is just for you.</h1>-->
-        <!--<div class="MO-btn-fork">-->
-            <!--<a href="#/about" class="btn MO-home-btn" >Tell me more</a>-->
-            <!--<a href="#/login" class="btn MO-home-btn" >Join</a>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
+    <div class="carousel-inner" role="listbox">
 
 
+        <!--1st slide-->
+        <div class="carousel-item active MO-picture1 view hm-black-light">
+            <div class="mask flex-center"/>
 
-
-
-
-<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-
-    <div class="carousel-inner" role="listbox" >
-        <!--First slide-->
-        <div class="carousel-item active mo-picture1">
+            <!--caption-->
             <div class="MO-home animated fadeInDown">
                 <div class="col-md-12 text-center">
                     <h1 style="font-size: 5vw;">Do you have a dog?</h1>
-                    <div class="MO-btn-fork">
-                        <a class="btn MO-home-btn" data-target="#carousel-example-1z" data-slide-to="1">no</a>
-                        <a class="btn MO-home-btn" data-target="#carousel-example-1z" data-slide-to="2">yes</a></div>
+                        <div class="MO-btn-fork">
+                            <a class="btn MO-home-btn" data-target="#carousel" data-slide-to="1">no</a>
+                            <a class="btn MO-home-btn" data-target="#carousel" data-slide-to="2">yes</a>
+                        </div>
                 </div>
             </div>
+                <div class="MO-home-brand animated fadeInUp col-md-12 text-center">
+                    <h1 style="font-size: 3vw">BARKBOOK</h1>
+                </div>
         </div>
 
-        <div class="carousel-item mo-picture2">
-            <div class="MO-home">
+        <!--2nd slide-->
+        <div class="carousel-item MO-picture2 view hm-black-light">
+            <div class="mask flex-center"/>
+
+            <!--caption-->
+            <div class="MO-home carousel-caption animated slideInRight">
                 <div class="col-md-12 text-center">
                     <h5 class="MO-home-tiny">Okay, no dog.</h5>
                     <h1 style="font-size: 5vw;">But you love dogs right?</h1>
-                    <div class="MO-btn-fork">
-                        <a class="btn MO-home-btn" href="#" >No...</a>
-                        <a class="btn MO-home-btn" data-target="#carousel-example-1z" data-slide-to="2">Yes, of course!</a></div>
+                        <div class="MO-btn-fork">
+                            <a class="btn MO-home-btn" href="#" >No...</a>
+                            <a class="btn MO-home-btn" data-target="#carousel" data-slide-to="2">Yes, of course!</a>
+                        </div>
+                </div>
+                <div class="MO-home-brand col-md-12 text-center">
+                    <h1 style="font-size: 3vw">BARKBOOK</h1>
                 </div>
             </div>
         </div>
 
-        <div class="carousel-item mo-picture3">
-            <div class="MO-home hidden-xs">
+        <!--3rd slide-->
+        <div class="carousel-item MO-picture3 view hm-black-light">
+            <div class="mask flex-center"/>
+
+            <!--caption-->
+            <div class="MO-home carousel-caption animated slideInLeft">
                 <div class="col-md-12 text-center">
                     <h5 class="MO-home-tiny">I figured.</h5>
-                    <h1 style="font-size: 5vw;">Barkbook is just for you.</h1>
+                    <h1 style="font-size: 5vw;">Barkbook is just for you!</h1>
+                        <div class="MO-btn-fork">
+                            <a class="btn MO-home-btn" data-target="#carousel" data-slide-to="3">Tell me more!</a>
+                            <a class="btn MO-home-btn" href="#/login">Sign in</a>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--4th slide-->
+        <div class="carousel-item MO-picture4 view hm-black-light">
+            <div class="mask flex-center"/>
+
+            <!--caption-->
+            <div class="MO-home carousel-caption animated fadeIn">
+                <div class="col-md-12 text-center">
+                    <h5 class="MO-home-tiny">Create a profile for your fur friend.</h5>
+                    <h1 style="font-size: 5vw;">Your dog's home.</h1>
                     <div class="MO-btn-fork">
-                        <a class="btn MO-home-btn" href="#/about">tell me more</a>
-                        <a class="btn MO-home-btn" href="#/login">Sign in</a></div>
+                        <a class="btn MO-home-btn" data-target="#carousel" data-slide-to="4">go on..</a>
+                        <a class="btn MO-home-btn" href="#/login">Sign in</a>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!--5th slide-->
+        <div class="carousel-item MO-picture5 view hm-black-light">
+            <div class="mask flex-center"/>
+
+            <!--caption-->
+            <div class="MO-home carousel-caption animated fadeIn">
+                <div class="col-md-12 text-center">
+                    <h5 class="MO-home-tiny">Create a profile for your fur friend.</h5>
+                    <h1 style="font-size: 5vw;">Your dog's home.</h1>
+                    <div class="MO-btn-fork">
+                        <a class="btn MO-home-btn" href="#/about">go on..</a>
+                        <a class="btn MO-home-btn" href="#/login">Sign in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
-
-
-<!--<div class="w3-content w3-display-container">-->
-    <!--<img class="mySlides" src="http://i.imgur.com/PpZ6w3l.jpg" style="width:100%">-->
-    <!--<img class="mySlides" src="http://i.imgur.com/yoDNSke.jpg" style="width:100%">-->
-    <!--<img class="mySlides" src="https://images.pexels.com/photos/156961/pexels-photo-156961.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" style="width:100%">-->
-
-</div>
-    <!--<div class="WILSON">-->
-        <!--<button data-target="#carousel-example-1z" data-slide-to="2" class="btn">yes</button>-->
-        <!--<button data-target="#carousel-example-1z" data-slide-to="1" class="btn" >no</button>-->
-    <!--</div>-->
-
-<script>
-
-<!--button class="btn" onclick="plusDivs(1)">no</button>-->
-
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
-</script>

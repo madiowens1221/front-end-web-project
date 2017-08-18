@@ -1,12 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="root">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>my app</title>
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css"/>
+    <link rel="stylesheet" href="/css/login.css"/>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="stylesheet" href="/css/about.css"/>
+    <link rel="stylesheet" href="/css/home.css"/>
+    <link rel="stylesheet" href="/css/questions.css"/>
+    <link rel="stylesheet" href="/css/account.css"/>
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand|Josefin+Sans|Raleway:200|Sigmar+One" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
+
+
+
 </head>
+
 <body>
 
-<h1>Hello World!</h1>
+<div class="container-fluid  mo-body" ng-controller="indexCtrl">
+    <div class="row mo-nav-row"  ng-hide="isHomeView">
+        <div class="col mo-nav-col">
+
+            <!--navigation bar-->
+            <nav class="navbar navbar-toggleable-lg navbar-inverse bg-inverse z-depth-2 mo-nav-padding"  role="navigation">
+
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand mo-brand" href="#/home">BARKBOOK</a>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav ">
+                        <!--home-->
+                        <li class="nav-item">
+                            <a class="nav-link fa fa-home fa-2x" href="#/dashboard"><span class="sr-only">(current)</span></a>
+                        </li>
+                        <!--account-->
+                        <li class="nav-item">
+                            <a class="nav-link  fa fa-user fa-2x" href="#/account"></a>
+                        </li>
+                        <!--chat-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fa fa-comments fa-2x" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink2">
+                                <div> HELLO </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fa fa-info fa-2x" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                <div class="text-center">more info</div>
+                                <a class="dropdown-item" href="#/about">about</a>
+                                <a class="dropdown-item" href="#/questions">faq</a>
+                            </div>
+                        </li>
+
+                        <a class="btn btn-sm cyan lighten-2 mo-button-font" ng-click="logInOrOut()"><i class="fa fa-plus mr-2"></i>{{buttonText}}</a>
+                    </ul>
+                </div>
+
+            </nav>
+            <!--end navigation bar-->
+        </div>
+    </div>
+
+</div>
+
+<div ng-view="" autoscroll="true" ></div>
+
+<div class="push"></div>
+<footer class="page-footer center-on-small-only MO-page-footer" style="padding-top: 0px;" ng-hide="isHomeView">
+
+    <!--Footer Links-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 mo-footer-brand">
+                <a class="navbar-brand mo-brand h1-responsive" href="#/home">BARKBOOK</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mo-footer-mid">
+                <a href="#/about" class="btn black mo-f-btn"><i class="fa fa-info mr-2"></i>learn more</a>
+                <span class="mo-or">or</span>
+                <a href="#/login" class="btn black mo-f-btn"><i class="fa fa-plus mr-2"></i>sign up</a>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <!--First column-->
+            <div class="col-md-12 mo-footer-links">
+                <ul class="mo-footer-ul">
+                    <li>
+                        <a href="#/home">
+                        <div class="mo-icon">
+                                <span class="mo-icon fa fa-home"/>
+                                <span class="mo-link"> home</span>
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/account">
+                            <div class="mo-icon">
+                                <span class="mo-icon fa fa-user"/>
+                                <span class="mo-link"> account</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/questions">
+                            <div class="mo-icon">
+                                <span class="mo-icon fa fa-question"/>
+                                <span class="mo-link"> faq</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/links">
+                            <div class="mo-icon">
+                                <span class="mo-icon fa fa-external-link"/>
+                                <span class="mo-link"> more links</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mo-footer-bottom">
+                <p class="mo-fineprint">
+                    <i class="fa fa-copyright"></i>
+                    2017 Madison Owens
+                </p>
+                <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCsKuoJyziGg0atjulh8wTqKkDJcEC86BA",
+    authDomain: "capstone-project-cb69b.firebaseapp.com",
+    databaseURL: "https://capstone-project-cb69b.firebaseio.com",
+    projectId: "capstone-project-cb69b",
+    storageBucket: "",
+    messagingSenderId: "357435805108"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+
+<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/js/mdb.min.js"></script>
+<!--referring to static folder "/"-->
+<script src="vendor.js/angular/angular.js"></script>
+<script src="vendor.js/angular-route/angular-route.js"></script>
+
+<script src="/javascript/app.js"></script>
+<!--views-->
+<script src="/javascript/viewLogin/login.js"></script>
+<script src="/javascript/viewAbout/about.js"></script>
+<script src="/javascript/viewDashboard/dashboard.js"></script>
+<script src="/javascript/viewAccount/account.js"></script>
+<script src="/javascript/viewHome/home.js"></script>
+<script src="/javascript/viewFAQ/questions.js"></script>
 
 </body>
+
+
 </html>

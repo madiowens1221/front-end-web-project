@@ -1,0 +1,60 @@
+<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+        <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox" >
+        <!--First slide-->
+        <div class="carousel-item active mo-picture1"/>
+
+        <div class="carousel-item mo-picture2"/>
+
+        <div class="carousel-item mo-picture3"/>
+    </div>
+</div>
+
+<script>
+$('.carousel').carousel({
+interval: 3000
+})</script>
+
+
+.mo-picture1 {
+      background: url("https://images.pexels.com/photos/171297/pexels-photo-171297.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")center fixed;
+      background-size: cover;
+      height: 100vh;
+}
+
+.mo-picture2 {
+    background: url("https://images.pexels.com/photos/5286/walking-garden-dog-outside.jpg?w=1260&h=750&auto=compress&cs=tinysrgbgithub")center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.mo-picture3 {
+    background: url("https://images.pexels.com/photos/313104/pexels-photo-313104.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb")center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+html,
+body {
+  min-height: 100vh;
+  width: 100%;
+  margin:0%;
+}
+
+/
+.mo-box {
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  right: 0;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(146, 135, 187, .85) 0%, rgba(0, 0, 0, .9) 100%);
+}
