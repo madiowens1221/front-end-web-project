@@ -39,33 +39,33 @@
   font-weight: bold;
 }
 
-
+/*slide1*/
 .MO-picture1 {
-      background: url("http://i.imgur.com/PpZ6w3l.jpg")center fixed;
+      background: url("/madisonpics/slide1.png")center fixed;
       background-size: cover;
       height: 100vh;
 }
-
+/*slide*/
 .MO-picture2 {
-    background: url("http://i.imgur.com/yoDNSke.jpg")center fixed;
+    background: url("/madisonpics/slide2.jpeg")center fixed;
     background-size: cover;
     height: 100vh;
 }
-
+/*slide3*/
 .MO-picture3 {
-    background: url("http://i.imgur.com/PKizDwo.jpg")center fixed;
+    background: url("/madisonpics/slide3.jpeg")center fixed;
     background-size: cover;
     height: 100vh;
 }
-
+/*slide4*/
 .MO-picture4 {
-  background: url("https://images.pexels.com/photos/40064/theme-candid-portraits-smile-woman-girl-40064.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb") center fixed;
+  background: url("/madisonpics/slide4.jpeg") center fixed;
   background-size: cover;
   height: 100vh;
 }
-
+/*slide5*/
 .MO-picture5 {
-  background: url("https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb") center fixed;
+  background: url("/madisonpics/slide5.jpeg") center fixed;
   background-size: cover;
   height: 100vh;
 }

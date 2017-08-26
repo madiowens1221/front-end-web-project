@@ -1,0 +1,46 @@
+
+/*make dynamic*/
+.MO-actBG {
+  background: url("/madisonpics/dogs.jpg") center;
+  background-size: contain;
+  height: 100vh;
+}
+
+.MO-actText {
+  font-family: 'Kanit', sans-serif;
+  color: white;
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  right: auto;
+  width: 96.66666666666666%;
+}
+
+.MO-actTextSpacing {
+  font-size: 15vw;
+  letter-spacing: -0.05em;
+  margin-bottom: 0px;
+}
+
+/*
+font-family: 'Kanit', sans-serif;
+font-family: 'Cinzel', serif;
+font-family: 'Paytone One', sans-serif;
+font-family: 'Luckiest Guy', cursive;
+*/
+
+.MO-actText2 {
+  font-family: 'Chewy', cursive;
+  color: hotpink;
+}
+
+.MO-actForm {
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    right: auto;
+    width: 35%;
+    background-color: red;
+    border-radius: 10%;
+}

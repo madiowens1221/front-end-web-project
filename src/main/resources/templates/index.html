@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="/css/account.css"/>
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand|Josefin+Sans|Raleway:200|Sigmar+One|Saira+Extra+Condensed:300" rel="stylesheet"/>
+    <!--dogname fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Kanit:800|Luckiest+Guy|Paytone+One" rel="stylesheet"/>
+
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"/>
 
 
@@ -80,7 +83,7 @@
 <div ng-view="" autoscroll="true" ></div>
 
 <div class="push"></div>
-<footer class="page-footer center-on-small-only MO-page-footer" style="padding-top: 0px;" ng-hide="isHomeView">
+<footer class="page-footer center-on-small-only MO-page-footer" style="padding-top: 0px;" ng-controller="indexCtrl" ng-hide="isHomeView">
 
     <!--Footer Links-->
     <div class="container-fluid">
@@ -96,7 +99,7 @@
             <div class="col-md-12 mo-footer-mid">
                 <a href="#/about" class="btn black mo-f-btn"><i class="fa fa-info mr-2"></i>learn more</a>
                 <span class="mo-or">or</span>
-                <a href="#/login" class="btn black mo-f-btn"><i class="fa fa-plus mr-2"></i>sign up</a>
+                <a class="btn black mo-f-btn" ng-click="logInOrOutFooter()"><i class="fa fa-plus mr-2"></i>{{buttonText2}}</a>
             </div>
         </div>
 

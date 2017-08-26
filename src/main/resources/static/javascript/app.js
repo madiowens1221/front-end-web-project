@@ -15,7 +15,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 }]).
 
 controller( 'indexCtrl', ['$scope', '$window', function($scope, $window) {
-
+    $scope.buttonText2 = "loading!";
 
     $scope.buttonText = "loading!";
 
@@ -23,10 +23,12 @@ controller( 'indexCtrl', ['$scope', '$window', function($scope, $window) {
     $scope.$apply( function() {
         if (user) {
             $scope.buttonText = "paws out";
+            $scope.buttonText2 = "sign out";
             console.log("should say paws out");
             // User is signed in.
         } else {
             $scope.buttonText = "paws in";
+            $scope.buttonText2 = "sign in";
             console.log("should say paws in");
 
             // No user is signed in.
@@ -51,6 +53,41 @@ controller( 'indexCtrl', ['$scope', '$window', function($scope, $window) {
             $window.location.href = '#/home';
         }
     };
+
+
+
+//    FOOTER BUTTON
+    firebase.auth().onAuthStateChanged(function(user) {
+        $scope.$apply( function() {
+            if (user) {
+                $scope.buttonText2 = "sign out";
+                console.log("should say sign out");
+                // User is signed in.
+            } else {
+                $scope.buttonText2 = "sign in";
+                console.log("should say sign in");
+                // No user is signed in.
+                }
+            });
+        });
+    $scope.logInOrOutFooter = function() {
+        if ($scope.buttonText2 === "sign in") {
+            $window.location.href = '#/login';
+            console.log("should redirect");
+        }
+        if ($scope.buttonText2 === "sign out") {
+            console.log("log out");
+            firebase.auth().signOut().then(function() {
+              // Sign-out successful.
+              console.log("successfully signed out");
+            }).catch(function(error) {
+              // An error happened.
+              console.log(error);
+            });
+            $window.location.href = '#/home';
+        }
+    };
+
 }]);
 
 

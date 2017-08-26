@@ -26,13 +26,19 @@
 }
 
 .container section:nth-child(1) .image {
-  background-image: url(https://images.pexels.com/photos/128817/pexels-photo-128817.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
+  background: url(/madisonpics/about1.jpeg) center fixed;
+  background-size: cover;
+  height: 100vh;
 }
 .container section:nth-child(2) .image {
-  background-image: url(https://images.pexels.com/photos/169524/pexels-photo-169524.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
+  background: url(/madisonpics/about2.jpeg) center fixed;
+  background-size: cover;
+  height: 100vh;
 }
 .container section:nth-child(3) .image {
-  background-image: url(https://images.pexels.com/photos/57627/pexels-photo-57627.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
+  background: url(/madisonpics/about3.jpeg) center fixed;
+  background-size: cover;
+  height: 100vh;
 }
 
 .container section .image {
