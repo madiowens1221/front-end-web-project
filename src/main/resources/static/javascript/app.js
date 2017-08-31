@@ -5,7 +5,8 @@ angular.module('root', [
   'root.account',
   'root.dashboard',
   'root.home',
-  'root.questions'
+  'root.questions',
+  'root.links'
 ]).
 
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

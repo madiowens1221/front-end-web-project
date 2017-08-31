@@ -1,15 +1,20 @@
+
 .MO-FAQ {
   color: dark-grey;
   background: white;
   font-family: 'Raleway', sans-serif;
   text-align: center;
   font-weight: bold;
+      margin-left: 0px;
+      margin-right: 0px;
   }
 
 .MO-FAQ-bg {
   background-color: #f3f2ed;
   padding-top: 20px;
   padding-bottom: 50px;
+      margin-left: 0px;
+      margin-right: 0px;
 }
 
 .MO-FAQ-links {

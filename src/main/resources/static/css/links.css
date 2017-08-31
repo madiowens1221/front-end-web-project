@@ -1,0 +1,23 @@
+.MO-Links {
+  color: dark-grey;
+  background: white;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-weight: bold;
+      margin-right: 0px;
+      margin-left: 0px;
+  }
+
+.MO-Links-bg {
+  background-color: #f3f2ed;
+  padding-top: 20px;
+  padding-bottom: 34vh;
+  text-align: center;
+      margin-right: 0px;
+      margin-left: 0px;
+}
+
+.MO-Links-row {
+  margin-right: 0px;
+  margin-left: 0px;
+}

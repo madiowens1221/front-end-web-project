@@ -69,3 +69,7 @@
   background-size: cover;
   height: 100vh;
 }
+
+.MO-NObtn .comment { display: none; }
+.MO-NObtn:hover .replies { display: none; }
+.MO-NObtn:hover .comment { display: inline; }

@@ -10,6 +10,11 @@ angular.module('root.login', ['ngRoute'])
 
 
 .controller('loginCtrl', ["$scope", "$window", "$rootScope", function($scope, $window, $rootScope) {
+    $scope.email = "";
+    $scope.password = "";
+    $scope.verifyPassword = "";
+    $scope.name = "";
+    $scope.dogName = "";
     //provider for google login
     var googleProvider = new firebase.auth.GoogleAuthProvider();
     var facebookProvider = new firebase.auth.FacebookAuthProvider();
@@ -17,27 +22,39 @@ angular.module('root.login', ['ngRoute'])
     //nav and footer
     $rootScope.isHomeView = false;
 
+    //verify email
+    $scope.isEmailValid = function() {
+        firebase.auth().fetchProvidersForEmail($scope.email).catch(function(error) {
+        console.log(error.code);
+        console.log(error.message);
+        });
+    }
+
     //verify password green text
     $scope.focused = false;
     $scope.open= false;
     $scope.isValid = function(){
-            return $scope.focused;
-        };
+        if ($scope.password.length == 0) {
+            return "";
+        }
+        else if ($scope.password.length < 6) {
+            return "invalid";
+        }
+        else {
+            return "valid";
+        }
+    };
 
     //changes text on login button
     $scope.signUp = function(){
         if ($scope.buttonText === "sign in") {
-            $scope.buttonText = "create account";}
+            $scope.buttonText = "create account";
+        }
         else {
-            $scope.buttonText = "sign in";}
+            $scope.buttonText = "sign in";
+        }
     };
     $scope.buttonText = "sign in";
-
-    $scope.email;
-    $scope.password;
-    $scope.verifyPassword;
-    $scope.name;
-    $scope.dogName;
 
     //creating a user AND logging in IF already a user (aka 'log in')
     $scope.createUserOrLogIn = function() {

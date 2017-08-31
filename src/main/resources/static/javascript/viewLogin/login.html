@@ -31,14 +31,14 @@
                             <!--email-->
                             <div class="md-form">
                                 <i class="fa fa-envelope prefix black-text"></i>
-                                <input type="email" id="your-email" class="form-control validate" ng-model="email">
+                                <input type="email" id="your-email" class="form-control validate" ng-model="email" ng-class="isEmailValid()">
                                 <label for="your-email" data-error="invalid" data-success="good" class="MO-form-fonts" >Your email</label>
                             </div>
                             <!--password-->
                             <div class="md-form">
                                 <i class="fa fa-lock prefix black-text"></i>
                                 <!--not validated-->
-                                <input type="password" id="password" class="form-control" ng-model="password" ng-focus="focused = true" ng-blur="focused = false" ng-class="{valid: isValid()}">
+                                <input type="password" id="password" class="form-control" ng-model="password" ng-focus="focused = true" ng-blur="focused = false" ng-class="isValid()">
                                 <label for="password" data-error="invalid" data-success="good" class="MO-form-fonts" >Your password</label>
                             </div>
 
