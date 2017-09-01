@@ -10,11 +10,14 @@ angular.module('root.login', ['ngRoute'])
 
 
 .controller('loginCtrl', ["$scope", "$window", "$rootScope", function($scope, $window, $rootScope) {
+    //variables
     $scope.email = "";
     $scope.password = "";
     $scope.verifyPassword = "";
     $scope.name = "";
     $scope.dogName = "";
+    $scope.signinError;
+
     //provider for google login
     var googleProvider = new firebase.auth.GoogleAuthProvider();
     var facebookProvider = new firebase.auth.FacebookAuthProvider();
@@ -24,16 +27,23 @@ angular.module('root.login', ['ngRoute'])
 
     //verify email
     $scope.isEmailValid = function() {
-        firebase.auth().fetchProvidersForEmail($scope.email).catch(function(error) {
-        console.log(error.code);
-        console.log(error.message);
-        });
-    }
+        var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+        //if string is true
+        if ($scope.email == "") {
+            return "";
+        }
+        else if (String($scope.email).search (filter) != -1) {
+            return "valid";
+        }
+        else {
+            return "invalid";
+        }
+    };
 
     //verify password green text
     $scope.focused = false;
     $scope.open= false;
-    $scope.isValid = function(){
+    $scope.isPasswordValid = function(){
         if ($scope.password.length == 0) {
             return "";
         }
@@ -42,6 +52,19 @@ angular.module('root.login', ['ngRoute'])
         }
         else {
             return "valid";
+        }
+    };
+
+    //verify passwords match
+    $scope.isPasswordVerify = function() {
+        if ($scope.verifyPassword == "") {
+            return "";
+        }
+        else if ($scope.password === $scope.verifyPassword) {
+            return "valid";
+        }
+        else {
+            return "invalid";
         }
     };
 
@@ -58,26 +81,36 @@ angular.module('root.login', ['ngRoute'])
 
     //creating a user AND logging in IF already a user (aka 'log in')
     $scope.createUserOrLogIn = function() {
-        if ($scope.buttonText === "sign in") {
+        if ($scope.buttonText === "sign in" && $scope.isPasswordValid() === "valid" && $scope.isEmailValid() === "valid") {
         //log in
-            firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).catch(function(error) {
-              // Handle Errors here.
-              var errorCode = error.code;
-              var errorMessage = error.message;
-              // ...
+            firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(user){
+                $window.location.href = '#/account';
+            }).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                $scope.$apply(function(){
+                    $scope.signinError = error.message;
+                })
             });
-        $window.location.href = '#/account';
         }
-        else {
-            firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).catch(function(error) {
-                      // Handle Errors here.
-                      var errorCode = error.code;
-                      console.log(errorCode);
-                      var errorMessage = error.message;
-                      console.log(errorMessage);
-                      // ...
-                    });
-            }
+        else if ($scope.isPasswordValid() === "valid" && $scope.isEmailValid() === "valid" && $scope.isPasswordVerify() === "valid") {
+            firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(user){
+                $window.location.href = '#/account';
+            }).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                $scope.$apply(function(){
+                    $scope.signinError = error.message;
+                })
+            });
+        }
+         else {
+         console.log("ERORRER");
+         console.log($scope.isPasswordValid());
+         console.log($scope.isEmailValid());
+         }
     }
 
     //google

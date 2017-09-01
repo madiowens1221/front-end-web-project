@@ -21,6 +21,7 @@
                         <!--google and facebook btns-->
                         <div class="text-center">
                             <a href="" class="btn deep-orange darken-3  waves-effect waves-light" ng-click="googleLogin()"><i class="fa fa-google-plus left" ></i> Google +</a>
+                            or
                             <a href="" class="btn  light-blue darken-3  waves-effect waves-light" ng-click="facebookLogin()"><i class="fa fa-facebook left"></i> Facebook</a>
                         </div>
 
@@ -31,15 +32,15 @@
                             <!--email-->
                             <div class="md-form">
                                 <i class="fa fa-envelope prefix black-text"></i>
-                                <input type="email" id="your-email" class="form-control validate" ng-model="email" ng-class="isEmailValid()">
+                                <input type="email" id="your-email" class="form-control" ng-model="email" ng-class="isEmailValid()">
                                 <label for="your-email" data-error="invalid" data-success="good" class="MO-form-fonts" >Your email</label>
                             </div>
                             <!--password-->
                             <div class="md-form">
                                 <i class="fa fa-lock prefix black-text"></i>
                                 <!--not validated-->
-                                <input type="password" id="password" class="form-control" ng-model="password" ng-focus="focused = true" ng-blur="focused = false" ng-class="isValid()">
-                                <label for="password" data-error="invalid" data-success="good" class="MO-form-fonts" >Your password</label>
+                                <input type="password" id="password" class="form-control" ng-model="password" ng-focus="focused = true" ng-blur="focused = false" ng-class="isPasswordValid()">
+                                <label for="password" data-error="too short :(" data-success="good :)" class="MO-form-fonts" >Your password</label>
                             </div>
 
                             <!--collapse form-->
@@ -47,8 +48,8 @@
                                     <!--validate password-->
                                     <div class="md-form">
                                         <i class="fa fa-check prefix black-text"></i>
-                                        <input type="password" id="valid-pass" class="form-control validate" ng-model="verifyPassword">
-                                        <label for="valid-pass" data-error="wrong" data-success="right" class="MO-form-fonts" >Verify password</label>
+                                        <input type="password" id="valid-pass" class="form-control" ng-model="verifyPassword" ng-class="isPasswordVerify()">
+                                        <label for="valid-pass" data-error="must match" data-success="right" class="MO-form-fonts" >Verify password</label>
                                     </div>
                                     <!--name-->
                                     <div class="md-form">
@@ -67,14 +68,14 @@
 
                             <!--signIn or createUser btn-->
                             <div class="text-center mb-1">
-                                <button type="button" class="btn btn-block mo-btn-color waves-effect waves-light" ng-click="createUserOrLogIn()">{{buttonText}}</button>
+                                <button type="button" class="btn btn-block mo-btn-color waves-effect waves-light" ng-click="createUserOrLogIn()">{{buttonText}}</button> {{signinError}}
                             </div>
 
                             <hr class="style14">
 
                             <!--collapse form btn-->
-                            <div class="text-center">
-                                <div><a data-toggle="collapse" data-target="#collapseSignup" aria-expanded="false" aria-controls="collapseSignup" ng-click="signUp()">new here?</a></div>
+                            <div class="text-center MO-newHere">
+                                <a data-toggle="collapse" data-target="#collapseSignup" aria-expanded="false" aria-controls="collapseSignup" ng-click="signUp()">new here?</a>
                             </div>
 
                         </form>
