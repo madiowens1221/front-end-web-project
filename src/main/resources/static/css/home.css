@@ -33,6 +33,22 @@
   padding-bottom: 10px;
 }
 
+/*login button*/
+.MO-home-btn-login {
+  border-radius: 1000px;
+  width: 75px;
+  background-color: white;
+  background: rgba(255,255,255,0.3);
+  color: rgba(0, 0, 0,0.7) !important;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: '', sans-serif;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
 /*tiny font*/
 .MO-home-tiny {
   color: white;

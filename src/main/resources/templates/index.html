@@ -90,8 +90,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 mo-footer-brand">
-                <a class="navbar-brand mo-brand h1-responsive" href="#/home">
-                    <i class="fa fa-paw"/>
+                <a class="navbar-brand mo-brand h1-responsive" style="margin-right: 0px;" href="#/home">
+                    <i class="fa fa-paw" />
                     </a>
             </div>
         </div>
@@ -117,7 +117,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#/account">
+                        <a ng-href="#/account/{{userId}}">
                             <div class="mo-icon">
                                 <span class="mo-icon fa fa-user"/>
                                 <span class="mo-link"> account</span>
@@ -170,6 +170,9 @@
     messagingSenderId: "357435805108"
   };
   firebase.initializeApp(config);
+
+  //get a reference to the database service
+  var database = firebase.database();
 </script>
 
 
