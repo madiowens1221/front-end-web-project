@@ -86,6 +86,7 @@
   height: 100vh;
 }
 
+/*hover effects for "retry"*/
 .MO-NObtn .comment { display: none; }
 .MO-NObtn:hover .replies { display: none; }
 .MO-NObtn:hover .comment { display: inline; }

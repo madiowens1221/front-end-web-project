@@ -1,26 +1,26 @@
 /*title*/
-.MO-Links {
+.MO-DB {
   color: dark-grey;
   background: white;
   font-family: 'Raleway', sans-serif;
   text-align: center;
   font-weight: bold;
-  margin-right: 0px;
-  margin-left: 0px;
-  }
-
-/*background*/
-.MO-Links-bg {
-  background-color: #f3f2ed;
-  padding-top: 20px;
-  padding-bottom: 34vh;
-  text-align: center;
       margin-right: 0px;
       margin-left: 0px;
+  }
+
+/*background color*/
+.MO-DB-bg {
+  background-color: #f3f2ed;
+  padding-top: 10px;
+  height: 42vh;
+  text-align: center;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
 /*row*/
-.MO-Links-row {
+.MO-DB-row {
   margin-right: 0px;
   margin-left: 0px;
 }

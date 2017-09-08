@@ -94,9 +94,26 @@ angular.module('root.login', ['ngRoute'])
                 })
             });
         }
+        //creating account
         else if ($scope.isPasswordValid() === "valid" && $scope.isEmailValid() === "valid" && $scope.isPasswordVerify() === "valid") {
             firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(user){
-                $window.location.href = '#/account';
+                //Write to database
+                console.log($scope.name);
+                console.log($scope.dogName);
+                console.log("hello");
+                firebase.database().ref('/user/' + user.uid).set({
+                    username: $scope.name,
+                    dogname: $scope.dogName,
+                    about: 'Write a short summary about your dog!',
+                    age: '0',
+                    gender: '0',
+                    tagline: 'Your dogs favorite one-liner here!',
+                    bgpic: '/madisonpics/dogs.jpg'
+                });
+                //take to account page
+                $window.location.href = '#/account/' + user.uid;
+
+                console.log(user.uid);
             }).catch(function(error) {
                 // Handle Errors here.
                 var errorCode = error.code;
@@ -106,8 +123,9 @@ angular.module('root.login', ['ngRoute'])
                 })
             });
         }
+        //error with signing in or creating account
          else {
-         console.log("ERORRER");
+         console.log("error");
          console.log($scope.isPasswordValid());
          console.log($scope.isEmailValid());
          }

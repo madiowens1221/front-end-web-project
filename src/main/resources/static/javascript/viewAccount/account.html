@@ -1,35 +1,60 @@
 <div class="view">
+
+    <!--mask on picture-->
     <div class="hm-black-slight">
         <div class="MO-actBG"/>
             <div class="mask pattern-2"/>
     </div>
 
-    <a href="/#" class="btn waves-effect waves-light MO-edit-btn"><i class="fa fa-pencil"></i> edit</a>
+    <!--editable form-->
+    <form editable-form name="editableFormAct" onaftersave="saveActInfo()">
 
-    <div class="MO-actText animated slideInRight">
-        <div class="col-md-12 text-right">
-            <h1 class="MO-actTextSpacing">Name</h1>
-                <div class="MO-actText2">
-                    <h1 class="h1-responsive"><strong>quote to describe your dog!</strong></h1>
-                </div>
+        <div class="buttons MO-edit-btn">
+            <!-- button to show form -->
+            <button type="button" class="btn btn-mdb waves-effect waves-light MO-edit-btn-pad" ng-click="editableFormAct.$show()" ng-show="!editableFormAct.$visible">
+                <i class="fa fa-pencil"></i>
+                edit
+            </button>
+            <!-- buttons to submit / cancel form -->
+            <span ng-show="editableFormAct.$visible">
+                <button type="submit" class="btn btn-primary waves-effect waves-light MO-edit-btn-pad" ng-disabled="editableFormAct.$waiting">
+                    <i class="fa fa-check"></i>
+                    Save
+                </button>
+                <button type="button" class="btn btn-secondary waves-effect waves-light MO-edit-btn-pad" ng-disabled="editableFormAct.$waiting" ng-click="editableFormAct.$cancel()">
+                    <i class="fa fa-times"></i>
+                    Cancel
+                </button>
+          </span>
         </div>
-    </div>
 
-    <div class="MO-actForm">
-        <div class="text-center collapse jumbotron MO-actFormCol" id="collapseAccount">
 
-                <h1 class="h1-responsive">Name</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
-                    to featured content or information.</p>
-                <hr class="my-2">
-                <span>birthday</span> <span>sex</span> <span>age</span>
-
+        <!--dog name and tag-->
+        <div class="MO-actText animated slideInRight">
+            <div class="col-md-12 text-right">
+                <h1 class="MO-actTextSpacing">{{dogName}}</h1>
+                    <div class="MO-actText2">
+                        <h1 class="h1-responsive" editable-text="quote.text" e-form="textBtnForm" placeholder="Your name.." e-required><strong>{{ quote.text || ' "tagline" '}}</strong></h1>
+                    </div>
             </div>
+        </div>
 
-    </div>
+        <!--more info area-->
+        <div class="MO-actForm animated slideInUp">
+            <div class="text-center collapse show jumbotron MO-actFormCol" id="collapseAccount">
+                    <p class="lead" editable-textarea="about.text" e-rows="7" e-cols="30" e-form="textBtnForm" e-required>{{ about.text || 'Write a short summary about your dog!' }}</p>
 
-    <div class="container">
-        <a class="MO-act-btn btn  lime darken-1" data-toggle="collapse" data-target="#collapseAccount" aria-expanded="false" aria-controls="collapseAccount" >more info!</a>
+                    <hr class="style14">
+                        <span class="MO-actAboutDog" editable-radiolist="gender.status" e-ng-options="s.value as s.text for s in ::statuses track by s.value" e-form="textBtnForm">{{ showStatus() }}</span>
+                        <span class="MO-actAboutDog" editable-range="age.range" e-max="20" e-form="textBtnForm">{{ age.range || 'Age' }}</span>
+                </div>
+
+        </div>
+    </form>
+
+    <!--more info button-->
+    <div class="flex-center">
+        <a class="MO-act-btn btn lime darken-1" data-toggle="collapse" data-target="#collapseAccount" aria-controls="collapseAccount" aria-expanded="true">more info!</a>
     </div>
 
 </div>

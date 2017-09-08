@@ -1,95 +1,39 @@
+/*parallax padding*/
 .mo-parallax-div {
   padding-right: 0px;
   padding-left: 0px;
+  width: 100vw;
 }
 
-.container {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  height: 100%;
-  justify-content: space-around;
-  position: relative;
-  width: 100%;
-}
-.container section {
-  width: 100%;
-  height: 100vh;
-  flex: 1;
-  display: flex;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-color: #000;
-}
-
-.container section:nth-child(1) {
-  background: url(/madisonpics/about1.jpeg) center fixed;
-  background-size: cover;
-  height: 100vh;
-}
-.container section:nth-child(2) .image {
-  background: url(/madisonpics/about2.jpeg) center fixed;
-  background-size: cover;
-  height: 100vh;
-}
-.container section:nth-child(3) .image {
-  background: url(/madisonpics/about3.jpeg) center fixed;
-  background-size: cover;
-  height: 100vh;
-}
-
-.container section .image {
-  background-attachment: fixed;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  opacity: .6;
-}
-
-.container section .stuff {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  height: 100%;
-  width: 100%;
-  max-width: 70%;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  margin: 0 auto;
-  font-size: 26px;
-  position: relative;
-}
-
-.about-mission {
-  padding-top: 20px;
-  padding-bottom: 20px;
-
-}
-
-.MO-about-bold {
-  font-weight: bold;
-  font-size: 6vw;
-}
-
-.MO-about-1 {
-  font-size: 6vw;
-}
-
-.MO-about-2 {
-  font-size: 2vw;
-}
-
-
+/*parallax text*/
 .mo-parallax {
     font-family: 'Raleway', sans-serif;
     font-size: 15vh;
 }
 
+/*mission text*/
+.about-mission {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/*bold text*/
+.MO-about-bold {
+  font-weight: bold;
+  font-size: 6vw;
+}
+
+/*size of about part 1*/
+.MO-about-1 {
+  font-size: 6vw;
+}
+
+/*size of about part 2*/
+.MO-about-2 {
+  font-size: 2vw;
+}
+
+/*small circles*/
 .mo-circles-title {
   font-family: 'Quicksand', sans-serif;
   font-weight: bold;
@@ -104,3 +48,51 @@
   margin-left: 0px;
   margin-right: 0px;
 }
+
+/* line */
+hr.style15 {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  margin-top:10px;
+  margin-bottom:10px;
+  width: 100vw;
+}
+
+
+.mo-picture1 {
+  background: url("/madisonpics/about1.jpeg") center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.mo-picture2 {
+  background: url(/madisonpics/about2.jpeg) center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.mo-picture3 {
+  background: url(/madisonpics/about3.jpeg) center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.mo-box {
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  right: 0;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(146, 135, 187, .85) 0%, rgba(0, 0, 0, .9) 100%);
+}
+
+
+.carousel .carousel-indicators li {
+    max-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    }

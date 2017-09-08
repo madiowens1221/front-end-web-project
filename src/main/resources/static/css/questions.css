@@ -1,14 +1,15 @@
-
+/*title*/
 .MO-FAQ {
   color: dark-grey;
   background: white;
   font-family: 'Raleway', sans-serif;
   text-align: center;
   font-weight: bold;
-      margin-left: 0px;
-      margin-right: 0px;
-  }
+  margin-left: 0px;
+  margin-right: 0px;
+}
 
+/*background*/
 .MO-FAQ-bg {
   background-color: #f3f2ed;
   padding-top: 20px;
@@ -17,25 +18,29 @@
       margin-right: 0px;
 }
 
+/*links for questions*/
 .MO-FAQ-links {
   color: #6c6c6c;
   text-decoration: none;
 }
 
+/*links for questions - hover*/
 .MO-FAQ-links:hover {
   color: hotpink;
   -webkit-transition: color .5s ease-out;
 }
 
+/*link answers*/
 .MO-open {
-      padding: 1em .5em;
-      list-style: none;
-      border-bottom: 1px solid #CDCDCD;
-      border-bottom: 1px solid rgba(0,0,0,0.15);
-      border-top: 1px solid #FFF;
-      border-top: 1px solid rgba(255,255,255,0.75);
+  padding: 1em .5em;
+  list-style: none;
+  border-bottom: 1px solid #CDCDCD;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  border-top: 1px solid #FFF;
+  border-top: 1px solid rgba(255,255,255,0.75);
 }
 
+/*link answers hover bg white*/
 .MO-open:hover {
   background-color: white;
 }

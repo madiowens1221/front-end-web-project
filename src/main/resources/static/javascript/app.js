@@ -3,7 +3,7 @@ angular.module('root', [
   'root.login',
   'root.about',
   'root.account',
-  'root.dashboard',
+  'root.explore',
   'root.home',
   'root.questions',
   'root.links'
@@ -25,13 +25,10 @@ controller( 'indexCtrl', ['$scope', '$window', function($scope, $window) {
         if (user) {
             $scope.buttonText = "paws out";
             $scope.buttonText2 = "sign out";
-            console.log("should say paws out");
             // User is signed in.
         } else {
             $scope.buttonText = "paws in";
             $scope.buttonText2 = "sign in";
-            console.log("should say paws in");
-
             // No user is signed in.
             }
         });

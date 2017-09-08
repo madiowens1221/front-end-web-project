@@ -7,6 +7,7 @@ angular.module('root.questions', ['ngRoute'])
   });
 }])
 
-.controller('questionsCtrl', ["$scope", function($scope) {
+.controller('questionsCtrl', ["$scope", "$rootScope", function($scope, $rootScope) {
+    $rootScope.isHomeView = false;
 
 }]);

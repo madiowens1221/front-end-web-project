@@ -7,6 +7,7 @@ angular.module('root.links', ['ngRoute'])
   });
 }])
 
-.controller('linksCtrl', ["$scope", function($scope) {
+.controller('linksCtrl', ["$scope", "$rootScope", function($scope, $rootScope) {
+    $rootScope.isHomeView = false;
 
 }]);
