@@ -2,8 +2,12 @@
 
     <!--mask on picture-->
     <div class="hm-black-slight">
-        <div class="MO-actBG"/>
+        <div class="MO-actBG" ng-style="{'background-image': 'url('+ bgpic +')'}"/>
             <div class="mask pattern-2"/>
+    </div>
+
+    <div class="text-center MO-PawPlace animated slideInDown">
+        Paw Place
     </div>
 
     <!--editable form-->
@@ -11,7 +15,7 @@
 
         <div class="buttons MO-edit-btn">
             <!-- button to show form -->
-            <button type="button" class="btn btn-mdb waves-effect waves-light MO-edit-btn-pad" ng-click="editableFormAct.$show()" ng-show="!editableFormAct.$visible">
+            <button type="button" class="btn btn-mdb waves-effect waves-light MO-edit-btn-pad" ng-click="editableFormAct.$show()" ng-show="!editableFormAct.$visible" ng-if="showEditBtn">
                 <i class="fa fa-pencil"></i>
                 edit
             </button>
@@ -30,24 +34,36 @@
 
 
         <!--dog name and tag-->
+        <div class="text-right MO-STITCH">
+            <span editable-text="bgpic" e-form="textBtnForm" ng-show="editableFormAct.$visible">background img: </span>
+        </div>
         <div class="MO-actText animated slideInRight">
             <div class="col-md-12 text-right">
-                <h1 class="MO-actTextSpacing">{{dogName}}</h1>
-                    <div class="MO-actText2">
-                        <h1 class="h1-responsive" editable-text="quote.text" e-form="textBtnForm" placeholder="Your name.." e-required><strong>{{ quote.text || ' "tagline" '}}</strong></h1>
-                    </div>
+                <!--background img editable-
+                <!--Dog name editables-->
+                <span editable-select="dogName.font" e-ng-options="s.value as s.text for s in fonts">
+                    <h1 class="MO-actTextSpacing" editable-color="dogName.color" e-form="textBtnForm" ng-style="{color:dogName.color, 'font-family':dogName.font}">{{dogName.name}}</h1>
+                </span>
+                <!--tagline editables-->
+                <div class="MO-actText2">
+                    <span editable-color="quote.color" ng-style="{color:quote.color}">
+                        <h1 class="h1-responsive" editable-text="quote.text"  e-form="textBtnForm" e-required ><strong>{{ quote.text || ' "tagline" '}}</strong></h1>
+                    </span>
+                </div>
             </div>
         </div>
 
         <!--more info area-->
         <div class="MO-actForm animated slideInUp">
             <div class="text-center collapse show jumbotron MO-actFormCol" id="collapseAccount">
-                    <p class="lead" editable-textarea="about.text" e-rows="7" e-cols="30" e-form="textBtnForm" e-required>{{ about.text || 'Write a short summary about your dog!' }}</p>
-
-                    <hr class="style14">
-                        <span class="MO-actAboutDog" editable-radiolist="gender.status" e-ng-options="s.value as s.text for s in ::statuses track by s.value" e-form="textBtnForm">{{ showStatus() }}</span>
-                        <span class="MO-actAboutDog" editable-range="age.range" e-max="20" e-form="textBtnForm">{{ age.range || 'Age' }}</span>
-                </div>
+                <!--editable summary-->
+                <p class="lead" editable-textarea="about.text" e-rows="7" e-cols="30" e-form="textBtnForm" e-required>{{ about.text || 'Write a short summary about your dog!' }}</p>
+                <!--editable gender, age, location-->
+                <hr class="style14">
+                    <span class="MO-actAboutDog" editable-radiolist="gender.status" e-ng-options="s.value as s.text for s in ::genders track by s.value" e-form="textBtnForm">{{ showSelectedGender() }}</span>
+                    <span class="MO-actAboutDog" editable-range="age.range" e-max="20" e-form="textBtnForm">age:{{ age.range || 'Age' }}</span>
+                    <span class="MO-actAboutDog" editable-text="dogName.location" e-form="textBtnForm">{{ dogName.location || 'location' }}</span>
+            </div>
 
         </div>
     </form>

@@ -84,7 +84,7 @@ angular.module('root.login', ['ngRoute'])
         if ($scope.buttonText === "sign in" && $scope.isPasswordValid() === "valid" && $scope.isEmailValid() === "valid") {
         //log in
             firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(user){
-                $window.location.href = '#/account';
+                $window.location.href = '#/account/' + user.uid;
             }).catch(function(error) {
                 // Handle Errors here.
                 var errorCode = error.code;
@@ -108,7 +108,11 @@ angular.module('root.login', ['ngRoute'])
                     age: '0',
                     gender: '0',
                     tagline: 'Your dogs favorite one-liner here!',
-                    bgpic: '/madisonpics/dogs.jpg'
+                    bgpic: '/madisonpics/dogs.jpg',
+                    dogNameColor: '#ffffff',
+                    taglineColor: '#ff5bad',
+                    dogNameFont: 'Kanit',
+                    dogNameLocation: "Your city & state!"
                 });
                 //take to account page
                 $window.location.href = '#/account/' + user.uid;

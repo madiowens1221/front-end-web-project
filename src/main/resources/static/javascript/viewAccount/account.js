@@ -10,55 +10,83 @@ angular.module('root.account', ['ngRoute', 'xeditable'])
 .controller('accountCtrl', ["$scope", "$routeParams", "$rootScope", "$filter", function($scope, $routeParams, $rootScope, $filter) {
     $rootScope.isHomeView = false;
     $scope.dogName = '';
+    $scope.showEditBtn = false;
 
-
-    //editable text
+    //editable tagline
     $scope.quote = {
-        text: ''
+        text: '',
+        color: ''
     };
+
+    //editable about
     $scope.about = {
         text: ''
     };
+
     //gender
     $scope.gender = {
         status: 0
       };
-      $scope.statuses = [
+      $scope.genders = [
         {value: 1, text: 'female'},
         {value: 2, text: 'male'}
       ];
-      $scope.showStatus = function() {
-        var selected = $filter('filter')($scope.statuses, {value: $scope.gender.status});
-        return ($scope.gender.status && selected.length) ? selected[0].text : 'Gender';
+      $scope.showSelectedGender = function() {
+        var selectedGender = $filter('filter')($scope.genders, {value: $scope.gender.status});
+        return ($scope.gender.status && selectedGender.length) ? selectedGender[0].text : 'Gender';
       };
       $scope.age = {
         range: ''
       };
 
+      //color
+      $scope.dogName = {
+        name: '',
+        color: '',
+        location: '',
+        font: 'Kanit',
+      };
+       $scope.fonts = [
+          {value: 'Kanit', text: 'Kanit'},
+          {value: 'Cinzel', text: 'Cinzel'},
+          {value: 'Quicksand', text: 'Quicksand'},
+          {value: 'Luckiest Guy', text: 'Luckiest Guy'}
+        ];
+        $scope.showSelectedFont = function() {
+          var selectedFont = $filter('filter')($scope.fonts, {value: $scope.dogName.font});
+          return ($scope.dogName.font && selectedFont.length) ? selectedFont[0].text : 'Not set';
+        };
 
 
     //Read from database
     firebase.database().ref('/user/' + $routeParams.userId).once('value').then(function(user) {
         $scope.$apply(function(){
-            $scope.dogName = user.val().dogname;
+            $scope.dogName.name = user.val().dogname;
+            $scope.quote.text = user.val().tagline;
+            $scope.about.text = user.val().about;
+            $scope.gender.status = user.val().gender;
+            $scope.age.range = user.val().age;
+            $scope.dogName.color = user.val().dogNameColor;
+            $scope.quote.color = user.val().taglineColor;
+            $scope.dogName.font = user.val().dogNameFont;
+            $scope.bgpic = user.val().bgpic;
+            $scope.dogName.location = user.val().dogNameLocation;
         });
-
-//        console.log((user.val() && user.val().dogname));
     });
 
     //Write to database
+    //picture
     $scope.saveActInfo = function() {
-//    console.log($scope.quote);
-//    console.log($scope.about);
-//    console.log($scope.gender);
-//    console.log($scope.age);
-//    console.log($scope.quote.text);
-console.log("Inside Database Call");
         firebase.database().ref('/user/' + $routeParams.userId).update({
             tagline: $scope.quote.text,
             about: $scope.about.text,
             gender: $scope.gender.status,
-            age: $scope.age.range
+            age: $scope.age.range,
+            dogNameColor: $scope.dogName.color,
+            taglineColor: $scope.quote.color,
+            dogNameFont: $scope.dogName.font,
+            bgpic: $scope.bgpic,
+            dogNameLocation: $scope.dogName.location
         });
     }
 
@@ -84,7 +112,13 @@ console.log("Inside Database Call");
                 var uid = user.uid;
                 var providerData = user.providerData;
                 // ...
+                if (uid === $routeParams.userId) {
+                    $scope.showEditBtn = true;
+                } else {
+                    $scope.showEditBtn = false;
+                }
               } else {
+                    $scope.showEditBtn = false;
                 // User is signed out.
                 // ...
               }

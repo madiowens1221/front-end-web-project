@@ -17,33 +17,34 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
 controller( 'indexCtrl', ['$scope', '$window', function($scope, $window) {
     $scope.buttonText2 = "loading!";
-
     $scope.buttonText = "loading!";
+
+    $scope.uid = '';
 
     firebase.auth().onAuthStateChanged(function(user) {
     $scope.$apply( function() {
         if (user) {
             $scope.buttonText = "paws out";
             $scope.buttonText2 = "sign out";
+            $scope.RedirectAct = '#/account/' + user.uid;
             // User is signed in.
         } else {
             $scope.buttonText = "paws in";
             $scope.buttonText2 = "sign in";
+            $scope.RedirectAct = '#/login';
             // No user is signed in.
             }
         });
     });
 
+
     $scope.logInOrOut = function() {
         if ($scope.buttonText === "paws in") {
             $window.location.href = '#/login';
-            console.log("should redirect");
         }
         if ($scope.buttonText === "paws out") {
-            console.log("log out");
             firebase.auth().signOut().then(function() {
               // Sign-out successful.
-              console.log("successfully signed out");
             }).catch(function(error) {
               // An error happened.
               console.log(error);

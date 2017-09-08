@@ -2,7 +2,7 @@
 <html lang="en" ng-app="root">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
     <title>Barkbook</title>
 
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="/css/explore.css"/>
 
     <!--fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand|Josefin+Sans|Raleway:200|Sigmar+One|Saira+Extra+Condensed:300" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Chewy|Quicksand|Josefin+Sans|Raleway:200|Sigmar+One|Saira+Extra+Condensed:300|Libre+Barcode+39+Text" rel="stylesheet"/>
 
     <!--account dogname fonts-->
     <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Kanit:800|Luckiest+Guy|Paytone+One" rel="stylesheet"/>
@@ -60,7 +60,7 @@
 
                             <!--account-->
                             <li class="nav-item">
-                                <a class="nav-link  fa fa-user fa-2x" href="#/account"></a>
+                                <a class="nav-link  fa fa-user fa-2x" ng-href="{{RedirectAct}}"></a>
                             </li>
 
                             <!--more info-->
@@ -125,7 +125,7 @@
                         </li>
 
                         <li>
-                            <a ng-href="#/account/{{userId}}">
+                            <a ng-href="{{RedirectAct}}">
                                 <div class="mo-icon">
                                     <span class="mo-icon fa fa-user"/>
                                     <span class="mo-link"> account</span>

@@ -1,26 +1,51 @@
 /*title*/
-.MO-DB {
+.MO-EX {
   color: dark-grey;
   background: white;
   font-family: 'Raleway', sans-serif;
   text-align: center;
   font-weight: bold;
-      margin-right: 0px;
-      margin-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
   }
 
 /*background color*/
-.MO-DB-bg {
+.MO-EX-bg {
   background-color: #f3f2ed;
   padding-top: 10px;
-  height: 42vh;
   text-align: center;
   margin-right: 0px;
   margin-left: 0px;
 }
 
 /*row*/
-.MO-DB-row {
+.MO-EX-row {
   margin-right: 0px;
   margin-left: 0px;
+}
+
+/*circle border*/
+.MO-EX-circle {
+  border: solid 5px white;
+}
+
+.MO-EX-container {
+  padding: 0;
+}
+
+/*dogname*/
+.MO-EX-dogname {
+  font-family: 'Kanit';
+  margin: 0;
+}
+
+/*hover dogname*/
+.MO-EX-dogname:hover {
+  color: hotpink;
+  -webkit-transition: color .3s ease-out;
+}
+.MO-EX-username {
+  font-family: 'Kanit';
+  font-size: 15px;
+  color: grey;
 }
