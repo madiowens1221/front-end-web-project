@@ -3,13 +3,15 @@
     <!--mask on picture-->
     <div class="hm-black-slight">
         <div class="MO-actBG" ng-style="{'background-image': 'url('+ bgpic +')'}"/>
-            <div class="mask pattern-2"/>
+            <div ng-show="dogNameExist" class="mask pattern-2"/>
     </div>
 
     <div class="text-center MO-PawPlace animated slideInDown">
         Paw Place
     </div>
 
+    <!--wrapper-->
+    <div ng-show="dogNameExist">
     <!--editable form-->
     <form editable-form name="editableFormAct" onaftersave="saveActInfo()">
 
@@ -71,6 +73,19 @@
     <!--more info button-->
     <div class="flex-center">
         <a class="MO-act-btn btn lime darken-1" data-toggle="collapse" data-target="#collapseAccount" aria-controls="collapseAccount" aria-expanded="true">more info!</a>
+    </div>
+        <!--end wrapper-->
+    </div>
+
+    <div ng-hide="dogNameExist">
+        <form class="MO-dogNameExist text-center" ng-submit="console.log('test')">
+            <h1>What is your dog's name?</h1>
+            <input type="text" class="MO-dogNameExistInput" ng-model="dogName.name">
+
+        <div class="flex-center">
+            <button class="btn btn-default waves-effect waves-light" ng-click="updateDogName()">Paw Place</button>
+        </div>
+        </form>
     </div>
 
 </div>

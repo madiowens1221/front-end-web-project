@@ -98,17 +98,17 @@ angular.module('root.login', ['ngRoute'])
         else if ($scope.isPasswordValid() === "valid" && $scope.isEmailValid() === "valid" && $scope.isPasswordVerify() === "valid") {
             firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(user){
                 //Write to database
-                console.log($scope.name);
-                console.log($scope.dogName);
-                console.log("hello");
+//                console.log($scope.name);
+//                console.log($scope.dogName);
+//                console.log("hello");
                 firebase.database().ref('/user/' + user.uid).set({
                     username: $scope.name,
                     dogname: $scope.dogName,
                     about: 'Write a short summary about your dog!',
                     age: '0',
                     gender: '0',
-                    tagline: 'Your dogs favorite one-liner here!',
-                    bgpic: '/madisonpics/dogs.jpg',
+                    tagline: 'Your dogs tagline here!',
+                    bgpic: '/madisonpics/dogs2.jpg',
                     dogNameColor: '#ffffff',
                     taglineColor: '#ff5bad',
                     dogNameFont: 'Kanit',
@@ -116,8 +116,6 @@ angular.module('root.login', ['ngRoute'])
                 });
                 //take to account page
                 $window.location.href = '#/account/' + user.uid;
-
-                console.log(user.uid);
             }).catch(function(error) {
                 // Handle Errors here.
                 var errorCode = error.code;
@@ -135,6 +133,21 @@ angular.module('root.login', ['ngRoute'])
          }
     }
 
+
+
+
+    //getting all users in database
+    $scope.users = '';
+        firebase.database().ref('/user/').once('value').then(function(users) {
+            $scope.$apply(function() {
+                $scope.users = users.val();
+                console.log($scope.users);
+            });
+        });
+
+
+
+
     //google
     $scope.googleLogin = function() {
         firebase.auth().signInWithPopup(googleProvider).then(function(result) {
@@ -142,40 +155,96 @@ angular.module('root.login', ['ngRoute'])
           var token = result.credential.accessToken;
           // The signed-in user info.
           var user = result.user;
-          // ...
-          $window.location.href = '#/account';
+
+          if (result.user.uid in $scope.users) {
+              console.log('uid is in database');
+
+          //take to account page
+          $window.location.href = '#/account/' + user.uid;
+          } else {
+              console.log('uid not in database');
+              firebase.database().ref('/user/' + user.uid).set({
+                  username: '',
+                  dogname: '',
+                  about: 'Write a short summary about your dog!',
+                  age: '0',
+                  gender: '0',
+                  tagline: 'Your dogs tagline here!',
+                  bgpic: '',
+                  dogNameColor: '#ffffff',
+                  taglineColor: '#ff5bad',
+                  dogNameFont: 'Kanit',
+                  dogNameLocation: "Your city & state!"
+              });
+              $window.location.href = '#/account/' + user.uid;
+          };
+        // ...
         }).catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          // The email of the user's account used.
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
-          // ...
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            $scope.$apply(function(){
+               $scope.signinError = error.message;
+            })
         });
     }
 
     //facebook
     $scope.facebookLogin = function() {
         firebase.auth().signInWithPopup(facebookProvider).then(function(result) {
-          // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-          var token = result.credential.accessToken;
-          // The signed-in user info.
-          var user = result.user;
-          // ...
-          $window.location.href = '#/account';
+            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            // ...
+
+
+             console.log(result.user.uid);
+
+              if (result.user.uid in $scope.users) {
+                  console.log('uid is in database');
+
+              //take to account page
+              $window.location.href = '#/account/' + user.uid;
+              } else {
+                  console.log('uid not in database');
+                  firebase.database().ref('/user/' + user.uid).set({
+                      username: '',
+                      dogname: 'DOGNAME',
+                      about: 'Write a short summary about your dog!',
+                      age: '0',
+                      gender: '0',
+                      tagline: 'Your dogs tagline here!',
+                      bgpic: '/madisonpics/dogs2.jpg',
+                      dogNameColor: '#ffffff',
+                      taglineColor: '#ff5bad',
+                      dogNameFont: 'Kanit',
+                      dogNameLocation: "Your city & state!"
+                  });
+                  $window.location.href = '#/account/' + user.uid;
+              };
+
+
+
         }).catch(function(error) {
-          // Handle Errors here.
-          var errorCode = error.code;
-          console.log(errorCode);
-          var errorMessage = error.message;
-          console.log(errorMessage);
-          // The email of the user's account used.
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
-          // ...
+            // Handle Errors here.
+            var errorCode = error.code;
+            console.log(errorCode);
+            var errorMessage = error.message;
+            console.log(errorMessage);
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+            $scope.$apply(function(){
+                $scope.signinError = error.message;
+            })
         });
     }
 

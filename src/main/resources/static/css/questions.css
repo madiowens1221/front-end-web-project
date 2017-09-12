@@ -45,4 +45,11 @@
   background-color: white;
 }
 
+.MO-faq-fa{
+  color: #00acc1;
+}
 
+.MO-faq-fa:hover {
+  color: #cddc39;
+  -webkit-transition: color .5s ease-out;
+}

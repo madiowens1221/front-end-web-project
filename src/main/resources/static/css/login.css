@@ -47,7 +47,18 @@ hr.style14 {
 }
 
 /*new here text*/
+.MO-newHere {
+ font-family: 'Quicksand';
+}
+
 .MO-newHere:hover {
-  color: grey;
+  color: lightgrey;
   -webkit-transition: color .5s ease-out;
+  font-family: 'Quicksand';
+}
+
+/*errors*/
+.MO-errors {
+  font-size: 13px;
+  font-family: 'Quicksand';
 }

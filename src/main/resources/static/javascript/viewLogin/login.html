@@ -8,6 +8,7 @@
                     <div class="col display-4 mb-2 MO-PawsIn">Paws In</div>
                 </div>
 
+
             <!--login form-->
             <div class="row MO-login-bg">
                 <div class="col">
@@ -22,7 +23,7 @@
                         <div class="text-center">
                             <a href="" class="btn deep-orange darken-3  waves-effect waves-light" ng-click="googleLogin()"><i class="fa fa-google-plus left" ></i> Google +</a>
                             or
-                            <a href="" class="btn  light-blue darken-3  waves-effect waves-light" ng-click="facebookLogin()"><i class="fa fa-facebook left"></i> Facebook</a>
+                            <a href="" class="btn  light-blue darken-3  waves-effect waves-light" ng-click="facebookLogin()" ><i class="fa fa-facebook left"></i> Facebook</a>
                         </div>
 
                         <!--line-->
@@ -68,7 +69,7 @@
 
                             <!--signIn or createUser btn-->
                             <div class="text-center mb-1">
-                                <button type="button" class="btn btn-block mo-btn-color waves-effect waves-light" ng-click="createUserOrLogIn()">{{buttonText}}</button> {{signinError}}
+                                <button type="button" class="btn btn-block mo-btn-color waves-effect waves-light" ng-click="createUserOrLogIn()">{{buttonText}}</button> <span class="MO-errors">{{signinError}}</span>
                             </div>
 
                             <hr class="style14">

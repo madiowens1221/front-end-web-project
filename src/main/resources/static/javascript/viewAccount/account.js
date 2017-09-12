@@ -7,10 +7,11 @@ angular.module('root.account', ['ngRoute', 'xeditable'])
   });
 }])
 
-.controller('accountCtrl', ["$scope", "$routeParams", "$rootScope", "$filter", function($scope, $routeParams, $rootScope, $filter) {
+.controller('accountCtrl', ["$scope", "$routeParams", "$rootScope", "$filter", "$window", function($scope, $routeParams, $rootScope, $filter, $window) {
     $rootScope.isHomeView = false;
     $scope.dogName = '';
     $scope.showEditBtn = false;
+    $scope.dogNameExist = true;
 
     //editable tagline
     $scope.quote = {
@@ -44,7 +45,7 @@ angular.module('root.account', ['ngRoute', 'xeditable'])
         name: '',
         color: '',
         location: '',
-        font: 'Kanit',
+        font: 'Kanit'
       };
        $scope.fonts = [
           {value: 'Kanit', text: 'Kanit'},
@@ -71,11 +72,14 @@ angular.module('root.account', ['ngRoute', 'xeditable'])
             $scope.dogName.font = user.val().dogNameFont;
             $scope.bgpic = user.val().bgpic;
             $scope.dogName.location = user.val().dogNameLocation;
+
+            if ($scope.dogName.name === '') {
+                $scope.dogNameExist = false;
+            }
         });
     });
 
     //Write to database
-    //picture
     $scope.saveActInfo = function() {
         firebase.database().ref('/user/' + $routeParams.userId).update({
             tagline: $scope.quote.text,
@@ -89,15 +93,6 @@ angular.module('root.account', ['ngRoute', 'xeditable'])
             dogNameLocation: $scope.dogName.location
         });
     }
-
-
-
-
-    //get all users from database :D
-    //manipulate json objects in javascript
-//    firebase.database().ref('/user/').once('value').then(function(snapshot) {
-//        console.log((snapshot.val()));
-//      });
 
     //Determine if user is logged in
         firebase.auth().onAuthStateChanged(function(user) {
@@ -125,6 +120,13 @@ angular.module('root.account', ['ngRoute', 'xeditable'])
             });
         });
 
-
+    //updates dog name to database if they didn't include one
+    $scope.updateDogName = function() {
+        firebase.database().ref('/user/' + $routeParams.userId).update({
+            dogname: $scope.dogName.name,
+            bgpic: '/madisonpics/dogs2.jpg'
+        });
+        location.reload();
+    };
 
 }]);

@@ -3,49 +3,47 @@
   padding-right: 0px;
 }
 
+/*NAVIGATION*/
 .mo-nav-row {
   margin-left: 0px;
   margin-right: 0px;
 }
-
 .mo-nav-col {
   padding-left: 0px;
   padding-right: 0px;
 }
-
 .mo-nav-padding {
   padding-top: 0px;
   padding-bottom: 0px;
   padding-right: 0px;
   padding-left: 0px;
 }
-
+/*brand*/
 .mo-brand {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 5vh;
   padding-top: 0px;
   padding-bottom: 0px;
 }
-
+/*login button*/
 .mo-button-font {
   font-family: 'Quicksand', sans-serif;
   font-size: 18px !important;
   height: 35px;
   margin-top: 15px;
 }
-
 .mo-button-font:hover {
   background-color: hotpink !important;
 }
 
-
-
-
+/*footer*/
+/*brand button in center of footer*/
 .mo-footer-brand{
   background-color: #212121;
   text-align: center;
 }
 
+/*mid section of footer*/
 .mo-footer-mid {
   background-color:#3d3d42;
   text-align: center;
@@ -54,23 +52,23 @@
   font-family: 'Quicksand', sans-serif;
 }
 
+/*log in or learn more*/
 .mo-footer-links {
   background-color: #212121;
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   padding-top: 5px;
 }
-
 .mo-f-btn {
   font-family: 'Quicksand', sans-serif;
   font-size: 15px !important;
   padding: 15px;
 }
-
 .mo-f-btn:hover {
   background-color: #00acc1 !important;
 }
 
+/*"or"*/
 .mo-or {
   font-size: 12px;
 }
@@ -89,7 +87,7 @@
   padding-right: 1.5%;
 }
 
-
+/*links: about faq contact*/
 .mo-icon {
   color: grey;
 }
@@ -107,24 +105,7 @@
   font-size: 13px;
 }
 
-/* MADE THE FOOTER WORK ORIGINALLY
-* {
-    margin: 0;
-}
-html, body {
-    height: 100%;
-}
-.wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -155px; the bottom margin is the negative value of the footer's height
-}
-.footer, .push {
-    height: 155px;  .push must be the same height as .footer
-}
-*/
-
+/*return to top button*/
 #return-to-top {
     position: fixed;
     z-index: 99;
@@ -167,6 +148,7 @@ html, body {
     top: 5px;
 }
 
+/*gets rid of margin on footer*/
 .MO-page-footer {
   margin-top: 0px !important;
 }

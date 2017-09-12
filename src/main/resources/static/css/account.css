@@ -19,6 +19,27 @@
                0px 18px 23px rgba(0,0,0,0.1);;
 }
 
+/*dog name exist heading*/
+.MO-dogNameExist {
+  font-family: 'Quicksand';
+  position: absolute;
+  top: 30%;
+  width: 100%;
+}
+
+/*dog name exist input*/
+.MO-dogNameExistInput {
+  text-align: center;
+  font-family: 'Chewy';
+}
+input.MO-dogNameExistInput:focus {
+  width: 700px;
+  text-align: center;
+  border-bottom-color: hotpink !important;
+  box-shadow: 0 1px 0 hotpink !important;
+  font-family: 'Chewy';
+}
+
 /*spacing text*/
 .MO-actTextSpacing {
   font-size: 15vw;
@@ -53,7 +74,6 @@
   top: 0%;
   left: 0%;
 }
-
 .MO-edit-btn-pad {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -95,6 +115,7 @@ textarea {
 background-color: rgba(242, 243, 244,0.8) !important;
 }
 
+/*line*/
 hr.style14 {
   border: 0;
   height: 1px;
@@ -114,7 +135,7 @@ hr.style14 {
   font-family: 'Kanit', sans-serif;
   font-size: 150%;
 }
-
+/*paw place at top*/
 .MO-PawPlace {
   z-index: 100;
   position: absolute;

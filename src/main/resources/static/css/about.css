@@ -10,6 +10,11 @@
     font-family: 'Raleway', sans-serif;
     font-size: 15vh;
 }
+/*subtext*/
+.MO-parallax-subtext {
+  font-family: 'Raleway';
+  font-size: 5vh;
+}
 
 /*mission text*/
 .about-mission {
@@ -62,6 +67,7 @@ hr.style15 {
   width: 100vw;
 }
 
+/*parallax size and containers*/
 .container {
   display: flex;
   align-content: center;
@@ -103,7 +109,7 @@ hr.style15 {
   height: 100vh;
 }
 
-
+/*parallax image size and caption*/
 .container section .image {
   background-attachment: fixed;
   background-size: cover;
